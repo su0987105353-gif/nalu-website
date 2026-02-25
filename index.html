@@ -490,6 +490,20 @@
           </div>
         </div>
 
+        <div>
+          <label class="block text-white text-sm font-bold mb-2 uppercase tracking-wider" for="trip">Select Trip</label>
+          <select id="trip" name="trip" required
+            class="w-full bg-white/80 text-black px-4 py-3 rounded outline-none focus:ring-2 focus:ring-[#f3ff00] transition-all">
+            <option value="" disabled selected>Choose an adventure...</option>
+            <option value="Half-Day Flatwater">Half-Day Flatwater</option>
+            <option value="Half-Day Whitewater">Half-Day Whitewater</option>
+            <option value="Full-Day Extreme">Full-Day Extreme</option>
+            <option value="Custom Kayaking">Custom Kayaking</option>
+            <option value="Skill-Building Lesson">Skill-Building Lesson</option>
+            <option value="Playboat Training">Playboat Training</option>
+          </select>
+        </div>
+
         <button type="submit" id="submitBtn"
           class="mt-4 w-full bg-[#f3ff00] text-black font-bold uppercase tracking-[0.15em] py-4 rounded hover:bg-[#dcee00] transition-colors shadow-lg">
           Confirm Booking
@@ -599,6 +613,63 @@
         }, { passive: true });
       }
     });
+    // Booking Form Logic
+    const bookingForm = document.getElementById('bookingForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+
+    // 請務必將下方引號內的網址替換為全新部署的 GAS Web App URL
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbygUyxCsk8DRea-uzMzjyhbNJ7TWif_mjv39--K7NPWS8EscvAMY1dl3COhkKQR89QE/exec';
+
+    if (bookingForm) {
+      const dateInput = document.getElementById('date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+      }
+
+      bookingForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        submitBtn.innerText = 'Sending...';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+        formMessage.classList.add('hidden');
+
+        const formData = new FormData(bookingForm);
+        const urlEncodedData = new URLSearchParams(formData);
+
+        fetch(GAS_URL, {
+          method: 'POST',
+          body: urlEncodedData
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+          })
+          .then(data => {
+            if (data.success) {
+              alert('✅ ' + data.message);
+              formMessage.innerText = data.message;
+              formMessage.className = 'text-green-400 text-center text-sm font-bold mt-2 block';
+              bookingForm.reset();
+            } else {
+              throw new Error(data.message || 'Server returned false success status.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('❌ Submission failed. Please try again or contact us via WhatsApp.');
+            formMessage.innerText = 'Something went wrong. Please try WhatsApp directly.';
+            formMessage.className = 'text-red-400 text-center text-sm font-bold mt-2 block';
+          })
+          .finally(() => {
+            submitBtn.innerText = 'Confirm Booking';
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+          });
+      });
+    }
   </script>
 </body>
 
