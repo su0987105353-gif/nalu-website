@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WITIN WATERS Rafting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* 啟用平滑捲動 (Smooth Scroll) */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body id="top" class="font-sans text-gray-800 antialiased bg-white relative">
+
+  <header
+    class="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center text-white bg-black/50 backdrop-blur-md transition-all">
+    <div class="text-2xl font-serif font-bold tracking-widest cursor-pointer">WITIN WATERS</div>
+
+    <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+      <a href="#trips" class="hover:opacity-70 transition-opacity">Trips</a>
+      <a href="#whyus" class="hover:opacity-70 transition-opacity">Why Us</a>
+      <a href="#about" class="hover:opacity-70 transition-opacity">About</a>
+      <a href="#team" class="hover:opacity-70 transition-opacity">Team</a>
+    </nav>
+
+    <div class="hidden md:block">
+      <a href="#book"
+        class="bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">Book
+        Now</a>
+    </div>
+
+    <!-- 手機漢堡菜單按鈕 -->
+    <button id="mobileMenuBtn" class="md:hidden flex flex-col space-y-1.5 focus:outline-none">
+      <span class="w-6 h-0.5 bg-white transition-all"></span>
+      <span class="w-6 h-0.5 bg-white transition-all"></span>
+      <span class="w-6 h-0.5 bg-white transition-all"></span>
+    </button>
+  </header>
+
+  <!-- 手機版導航菜單 -->
+  <nav id="mobileMenu"
+    class="hidden fixed top-20 left-0 w-full bg-black/95 backdrop-blur-md z-40 md:hidden flex flex-col space-y-4 p-6 text-white">
+    <a href="#trips"
+      class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">Trips</a>
+    <a href="#whyus"
+      class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">Why
+      Us</a>
+    <a href="#about"
+      class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">About</a>
+    <a href="#team"
+      class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">Team</a>
+    <a href="#book"
+      class="mobile-link bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block">Book
+      Now</a>
+  </nav>
+
+  <section class="relative h-screen flex flex-col items-center justify-center overflow-hidden parallax-container">
+    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+      style="background-image: url('https://images.squarespace-cdn.com/content/v1/59f4406ad7bdcea53a9d7719/1520411539961-A90R9DDY1NZTGZS822M8/1_DSC5173.jpg');">
+    </div>
+    <div class="absolute inset-0 bg-black/40 -z-10"></div>
+
+    <div class="relative z-10 text-center text-white px-4">
+      <h3 class="text-xl md:text-2xl font-light mb-4 tracking-widest uppercase">Welcome to</h3>
+      <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6">Witin Waters Rafting</h1>
+      <h2 class="text-lg md:text-xl font-medium tracking-widest">Wild &bull; Rapid &bull; Explore</h2>
+    </div>
+  </section>
+
+  <section id="trips" class="bg-white py-24 px-6 md:px-10 max-w-[1600px] mx-auto">
+    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-20 text-center">Choose your adventure</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-20 text-left">
+      <div class="flex flex-col">
+        <div class="overflow-hidden mb-8">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/tour1.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+        </div>
+        <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">Half-Day Flatwater</h3>
+        <p class="text-[15px] text-gray-600 leading-[1.8]">Perfect for families and beginners. Glide peacefully on calm
+          waters and soak in the breathtaking natural scenery of the Nile — relaxing, safe, and absolutely
+          unforgettable.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="overflow-hidden mb-8">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/tour2.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+        </div>
+        <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">Half-Day Whitewater</h3>
+        <p class="text-[15px] text-gray-600 leading-[1.8]">Our signature trip! Guided by expert leaders, tackle the
+          iconic rapids of the White Nile and feel the ultimate rush of the waves crashing around you.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="overflow-hidden mb-8">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/tour3.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+        </div>
+        <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">Full-Day Extreme</h3>
+        <p class="text-[15px] text-gray-600 leading-[1.8]">Conquer every Class V rapid! This is the ultimate test of
+          strength and courage, including a celebratory lunch and drinks at the finish line.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="overflow-hidden mb-8">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/tour4.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+        </div>
+        <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">Custom Kayaking</h3>
+        <p class="text-[15px] text-gray-600 leading-[1.8]">Designed for all skill levels! With a professional guide by
+          your side, paddle head-on against the wildest waves and whirlpools the White Nile has to offer.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="overflow-hidden mb-8">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/tour5.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+        </div>
+        <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">Skill-Building Lesson</h3>
+        <p class="text-[15px] text-gray-600 leading-[1.8]">From basic paddling to the Eskimo Roll. Whether you're a
+          complete beginner or looking to advance, we have a professional coach tailored just for you.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="overflow-hidden mb-8">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/tour6.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+        </div>
+        <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-6">Playboat Training</h3>
+        <p class="text-[15px] text-gray-600 leading-[1.8]">We take you to the most famous surf spots on the White Nile
+          to practice! Whether beginner or expert, everyone can find their perfect wave and endless fun here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full max-w-[1600px] mx-auto px-6 md:px-10 mb-24 relative z-10">
+    <div class="relative w-full aspect-video overflow-hidden bg-black rounded-xl shadow-2xl">
+      <iframe class="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/I6vYXLSP0W0?autoplay=1&mute=1&loop=1&playlist=I6vYXLSP0W0&controls=1&rel=0&playsinline=1"
+        title="Witin Waters Adventure" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section id="whyus" class="bg-white pb-24 px-6 md:px-10 w-full max-w-[1600px] mx-auto relative z-10">
+
+    <div class="text-center mb-24">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 text-gray-900">Why Witin Waters?</h2>
+      <p class="text-[16px] text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+        100% Local Rooted · Professional Safety · Uncompromised Experience.<br>
+        We deliver the most honest, high-value, and unforgettable whitewater adventures on the mighty White Nile.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-20">
+
+      <div class="flex flex-col group">
+        <div
+          class="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg bg-black pointer-events-none mb-6">
+          <iframe
+            class="absolute top-1/2 left-1/2 w-[150%] h-[150%] min-w-[100%] min-h-[100%] -translate-x-1/2 -translate-y-1/2"
+            src="https://www.youtube.com/embed/1hDilkr6K2A?autoplay=1&mute=1&loop=1&playlist=1hDilkr6K2A&controls=0&showinfo=0&rel=0&playsinline=1"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+          </iframe>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-bold mb-3 text-gray-900 leading-tight">Push the Limits at Kalagala Falls
+          </h3>
+          <p class="text-[15px] text-gray-600 leading-[1.8]">We craft the most exhilarating custom routes. Watch our
+            Trip Leader, Witin, fearlessly navigate the legendary Class V Kalagala Falls. With world-class expertise, we
+            guide you to conquer the extreme safely.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col group">
+        <div class="mb-6 md:mt-2">
+          <h3 class="text-xl font-serif font-bold mb-3 text-gray-900 leading-tight">100% Local, Born in Bujagali</h3>
+          <p class="text-[15px] text-gray-600 leading-[1.8]">We are a proudly independent, locally-owned team. Your
+            investment flows directly back into the Bujagali community, supporting sustainable village development and
+            empowering the next generation of river guides.</p>
+        </div>
+        <div class="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg mt-auto">
+          <img src="image/why-local.webp" alt="100% Local Rooted"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+      </div>
+
+      <div class="flex flex-col group">
+        <div
+          class="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg bg-black pointer-events-none mb-6">
+          <iframe
+            class="absolute top-1/2 left-1/2 w-[150%] h-[150%] min-w-[100%] min-h-[100%] -translate-x-1/2 -translate-y-1/2"
+            src="https://www.youtube.com/embed/ez6_Ftd3fps?autoplay=1&mute=1&loop=1&playlist=ez6_Ftd3fps&controls=0&showinfo=0&rel=0&playsinline=1"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+          </iframe>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-bold mb-3 text-gray-900 leading-tight">Unmatched Safety Standards</h3>
+          <p class="text-[15px] text-gray-600 leading-[1.8]">We guarantee the highest safety kayaker-to-guest ratio on
+            the river. Watch Witin execute a flawless, split-second rescue. Thrills are guaranteed, but safety is the
+            one line we never compromise on.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col group">
+        <div class="mb-6 md:mt-2">
+          <h3 class="text-xl font-serif font-bold mb-3 text-gray-900 leading-tight">Flexible & Fair Pricing</h3>
+          <p class="text-[15px] text-gray-600 leading-[1.8]">By operating independently without heavy commercial
+            markups, we offer fully transparent and flexible pricing. Whatever your budget or adventure style, we
+            guarantee the best value on the Nile.</p>
+        </div>
+        <div class="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg mt-auto">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/why-budget.webp"
+            alt="Flexible Pricing"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+      </div>
+
+      <div class="flex flex-col group">
+        <div class="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg mb-6">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/why-route.webp"
+            alt="The Full River Experience"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-bold mb-3 text-gray-900 leading-tight">The Full River Experience</h3>
+          <p class="text-[15px] text-gray-600 leading-[1.8]">We never cut corners or secretly shorten your time on the
+            water. We promise transparent route planning and a full, action-packed journey. Every minute on the river is
+            maximized for your ultimate adventure.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col group">
+        <div class="mb-6 md:mt-2">
+          <h3 class="text-xl font-serif font-bold mb-3 text-gray-900 leading-tight">Free Pro Photos & Video</h3>
+          <p class="text-[15px] text-gray-600 leading-[1.8]">Focus on the rapids, and let us handle the memories. We
+            provide complimentary, high-quality photography and videography for your entire trip. Take home epic proof
+            of your battle against the White Nile—at no extra cost.</p>
+        </div>
+        <div class="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg mt-auto">
+          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/why-photos.webp"
+            alt="Free Professional Photos"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="relative h-[60vh] flex flex-col justify-center overflow-hidden parallax-container">
+    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+      style="background-image: url('https://images.squarespace-cdn.com/content/v1/59f4406ad7bdcea53a9d7719/1509182296380-UA7GMTEQ1VJVYS7HZV0N/IMG_1899.JPG');">
+    </div>
+    <div class="absolute inset-0 bg-black/50 -z-10"></div>
+
+    <div class="relative z-10 text-right text-white px-6 md:px-12 lg:px-24 max-w-4xl ml-auto">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Bujagali</h2>
+      <p class="text-lg md:text-xl font-light leading-relaxed">Born in Bujagali, raised by the White Nile. Whitewater is
+        our passion, but this community is our home. Beyond the rapids, we guide you into the heart of the village for a
+        deeply authentic Ugandan journey. Experience the real river with the locals who know it best.</p>
+    </div>
+  </section>
+
+  <section id="community" class="bg-white py-24 px-6 md:px-10 w-full max-w-[1600px] mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <div class="text-left">
+        <h2
+          class="text-5xl md:text-6xl lg:text-[70px] font-sans font-black mb-8 text-gray-900 leading-[1.1] tracking-tighter">
+          Empowering<br>Local Youth
+        </h2>
+        <p class="text-[15px] text-gray-600 leading-[1.8] mb-10 max-w-lg">
+          Beyond guiding adventurers from around the world, we believe in the power of giving back. Witin and Peter are
+          dedicated to providing free kayaking lessons to local youth, giving them a valuable skill for life. Last year,
+          we successfully hosted a major community competition, nurturing the next generation of champions on this
+          river!
+        </p>
+        <a href="#footer"
+          class="inline-block bg-[#f3ff00] text-black px-8 py-4 rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#dcee00] transition-colors shadow-sm">
+          Learn More
+        </a>
+      </div>
+
+      <div
+        class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-lg shadow-xl group bg-gray-100">
+
+        <div id="community-slider" class="flex w-full h-full transition-transform duration-500 ease-in-out">
+
+          <div class="w-full h-full flex-shrink-0 relative">
+            <img
+              src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/community-lesson.webp"
+              alt="Free Community Kayaking Lesson" class="w-full h-full object-cover">
+          </div>
+
+          <div class="w-full h-full flex-shrink-0 relative">
+            <img
+              src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/community-comp.webp"
+              alt="Local Community Competition" class="w-full h-full object-cover">
+          </div>
+
+          <div class="w-full h-full flex-shrink-0 relative bg-black">
+            <iframe src="https://www.youtube.com/embed/R88Y6V9bsw4?rel=0&playsinline=1"
+              title="Witin Waters Community Video" class="w-full h-full pointer-events-auto" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="w-full h-full flex-shrink-0 relative">
+            <img
+              src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/community-smile.webp"
+              alt="Future Stars of the White Nile" class="w-full h-full object-cover">
+          </div>
+
+        </div>
+
+        <button onclick="prevSlide()"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white w-12 h-12 flex items-center justify-center rounded transition-all z-10 opacity-0 group-hover:opacity-100 focus:outline-none backdrop-blur-sm">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <button onclick="nextSlide()"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white w-12 h-12 flex items-center justify-center rounded transition-all z-10 opacity-0 group-hover:opacity-100 focus:outline-none backdrop-blur-sm">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+  <section id="team" class="relative py-24 md:py-32 flex flex-col justify-center overflow-hidden parallax-container">
+    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+      style="background-image: url('https://images.squarespace-cdn.com/content/v1/59f4406ad7bdcea53a9d7719/1509265939167-NIKEVCRROD2HBVCDDH90/IMG_4079.JPG');">
+    </div>
+    <div class="absolute inset-0 bg-black/60 -z-10"></div>
+
+    <div class="w-full max-w-[1600px] mx-auto px-6 md:px-10 relative z-10">
+      <div class="flex flex-col items-end text-right mb-16 text-white ml-auto max-w-2xl">
+        <h2 class="text-5xl md:text-7xl font-sans font-bold mb-6 tracking-tight">Meet the Team</h2>
+        <p class="text-[15px] font-light mb-8 leading-relaxed opacity-90">
+          It's the people that make Witin Waters so special. Everyone of our crew is dedicated to making your day safe,
+          fun and memorable.
+        </p>
+        <a href="#about"
+          class="inline-block bg-[#f3ff00] text-black px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#dcee00] transition-colors">
+          Learn More
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+
+        <div class="group relative overflow-hidden bg-black">
+          <img src="image/team-witin.webp" alt="Basoga Witin"
+            class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+          <div
+            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-white font-bold mb-1">Basoga Witin</h3>
+            <p class="text-[#f3ff00] text-xs uppercase tracking-[0.2em] font-semibold">Head Team Leader</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden bg-black">
+          <img src="image/team-peter.webp" alt="Emoti Peter"
+            class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+          <div
+            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-white font-bold mb-1">Emoti Peter</h3>
+            <p class="text-[#f3ff00] text-xs uppercase tracking-[0.2em] font-semibold">Team Leader & Media</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden bg-black">
+          <img src="image/team-junior.webp" alt="Junior"
+            class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+          <div
+            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-white font-bold mb-1">Junior</h3>
+            <p class="text-[#f3ff00] text-xs uppercase tracking-[0.2em] font-semibold">Senior Guide</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden bg-black">
+          <img src="image/team-amos.webp" alt="Amos"
+            class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+          <div
+            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-white font-bold mb-1">Amos</h3>
+            <p class="text-[#f3ff00] text-xs uppercase tracking-[0.2em] font-semibold">Safety Kayaker</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden bg-black">
+          <img src="image/team-hamisi.webp" alt="Hamisi"
+            class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+          <div
+            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-white font-bold mb-1">Hamisi</h3>
+            <p class="text-[#f3ff00] text-xs uppercase tracking-[0.2em] font-semibold">Safety Kayaker</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden bg-black">
+          <img src="image/team-jackie.webp" alt="Jackie"
+            class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+          <div
+            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-white font-bold mb-1">Jackie</h3>
+            <p class="text-[#f3ff00] text-xs uppercase tracking-[0.2em] font-semibold">Safety Kayaker</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="book"
+    class="relative py-24 flex flex-col items-center justify-center overflow-hidden parallax-container min-h-screen">
+    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+      style="background-image: url('https://images.squarespace-cdn.com/content/v1/59f4406ad7bdcea53a9d7719/1522539382259-4QPDLBUMESW074YK9QQH/1_DSC4814.jpg');">
+    </div>
+    <div class="absolute inset-0 bg-black/60 -z-10"></div>
+
+    <div class="relative z-10 w-full max-w-xl mx-auto px-6">
+      <div class="text-center text-white mb-10">
+        <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Reserve Your Adventure</h2>
+        <p class="text-lg font-light opacity-90">Fill out the form below and we will contact you shortly.</p>
+      </div>
+
+      <form id="bookingForm"
+        class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-2xl flex flex-col gap-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-white text-sm font-bold mb-2 uppercase tracking-wider" for="name">Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full bg-white/80 text-black px-4 py-3 rounded outline-none focus:ring-2 focus:ring-[#f3ff00] transition-all">
+          </div>
+          <div>
+            <label class="block text-white text-sm font-bold mb-2 uppercase tracking-wider" for="phone">WhatsApp /
+              Phone</label>
+            <input type="text" id="phone" name="phone" required
+              class="w-full bg-white/80 text-black px-4 py-3 rounded outline-none focus:ring-2 focus:ring-[#f3ff00] transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-white text-sm font-bold mb-2 uppercase tracking-wider" for="email">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full bg-white/80 text-black px-4 py-3 rounded outline-none focus:ring-2 focus:ring-[#f3ff00] transition-all">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-white text-sm font-bold mb-2 uppercase tracking-wider" for="date">Travel
+              Date</label>
+            <input type="date" id="date" name="date" required
+              class="w-full bg-white/80 text-black px-4 py-3 rounded outline-none focus:ring-2 focus:ring-[#f3ff00] transition-all">
+          </div>
+          <div>
+            <label class="block text-white text-sm font-bold mb-2 uppercase tracking-wider" for="people">Number of
+              People</label>
+            <input type="number" id="people" name="people" min="1" required
+              class="w-full bg-white/80 text-black px-4 py-3 rounded outline-none focus:ring-2 focus:ring-[#f3ff00] transition-all">
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn"
+          class="mt-4 w-full bg-[#f3ff00] text-black font-bold uppercase tracking-[0.15em] py-4 rounded hover:bg-[#dcee00] transition-colors shadow-lg">
+          Confirm Booking
+        </button>
+
+        <div id="formMessage" class="hidden text-center text-sm font-bold mt-2"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer id="footer" class="bg-gray-900 text-white py-12 text-center relative z-10">
+    <p class="text-sm font-light tracking-widest opacity-60">© Witin Waters Rafting 2024</p>
+  </footer>
+
+  <a href="#top" id="backToTop"
+    class="fixed bottom-8 right-8 bg-gray-900 text-white p-4 rounded-full transition-opacity duration-300 z-50 hover:bg-gray-700 shadow-lg border border-gray-600 opacity-0 pointer-events-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 視差滾動腳本
+      const parallaxContainers = document.querySelectorAll('.parallax-container');
+      let ticking = false;
+
+      function updateParallax() {
+        const scrolled = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        parallaxContainers.forEach(container => {
+          const bg = container.querySelector('.parallax-bg');
+          if (!bg) return;
+          const rect = container.getBoundingClientRect();
+          const elementTop = rect.top + scrolled;
+
+          if (scrolled + windowHeight > elementTop && scrolled < elementTop + container.offsetHeight) {
+            const yPos = (scrolled - elementTop) * 0.4;
+            bg.style.transform = `translate3d(0, ${yPos}px, 0)`;
+          }
+        });
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+      updateParallax();
+      // Community Slider Logic
+      let currentSlide = 0;
+      const sliderContainer = document.getElementById('community-slider');
+      // 計算有幾個幻燈片 (子元素數量)
+      const totalSlides = sliderContainer ? sliderContainer.children.length : 0;
+
+      function updateSlidePosition() {
+        if (sliderContainer) {
+          sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+      }
+
+      // 將函數綁定到 window，讓 HTML 的 onclick 可以順利呼叫
+      window.nextSlide = function () {
+        if (totalSlides > 0) {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateSlidePosition();
+        }
+      }
+
+      window.prevSlide = function () {
+        if (totalSlides > 0) {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          updateSlidePosition();
+        }
+      }
+      // 手機版漢堡選單邏輯
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden'); // 防止背景滾動
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        });
+      });
+
+      // ✅ 修復的 Back to Top 按鈕邏輯
+      const backToTopBtn = document.getElementById('backToTop');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 500) {
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+          } else {
+            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }, { passive: true });
+      }
+    });
+  </script>
+</body>
+
+</html>
