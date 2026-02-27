@@ -50,22 +50,17 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* Mobile-friendly parallax backgrounds */
-.bg-fixed {
-  background-attachment: fixed;
-}
-
-/* Mobile devices: disable fixed backgrounds, use scroll instead */
-@media (max-width: 768px) {
-  .bg-fixed {
-    background-attachment: scroll;
-  }
-}
-
 /* Utility for fixed background images */
 @layer utilities {
   .bg-fixed {
     background-attachment: fixed;
+  }
+
+  /* Mobile devices: disable fixed backgrounds, use scroll instead */
+  @media (max-width: 768px) {
+    .bg-fixed {
+      background-attachment: scroll;
+    }
   }
 
   .text-ultra-dark {
