@@ -5,11 +5,18 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        display: ['Bebas Neue', 'sans-serif'],
       },
       colors: {
         'neon': '#f3ff00',
         'neon-dark': '#dcee00',
+        'nile-blue': '#0a4a7a',
+      },
+      backgroundColor: {
+        'ultra-dark': '#1a1a1a',
+      },
+      textColor: {
+        'ultra-dark': '#1a1a1a',
       }
     }
   },

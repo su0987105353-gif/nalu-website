@@ -2,14 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables */
+:root {
+  --color-ultra-dark: #1a1a1a;
+  --color-nile-blue: #0a4a7a;
+  --color-neon: #f3ff00;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
 /* Custom styles */
 html {
   scroll-behavior: smooth;
+}
+
+/* Bebas Neue heading styles */
+h1, h2, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+h1 {
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h2 {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h3 {
+  letter-spacing: 0.1em;
+}
+
+/* Better body text */
+body {
+  font-family: var(--font-body);
+  color: var(--color-ultra-dark);
+}
+
+/* Remove Playfair Display references */
+.font-serif {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Mobile-friendly parallax backgrounds */
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+/* Mobile devices: disable fixed backgrounds, use scroll instead */
+@media (max-width: 768px) {
+  .bg-fixed {
+    background-attachment: scroll;
+  }
 }
 
 /* Utility for fixed background images */
 @layer utilities {
   .bg-fixed {
     background-attachment: fixed;
+  }
+
+  .text-ultra-dark {
+    color: var(--color-ultra-dark);
+  }
+
+  .bg-ultra-dark {
+    background-color: var(--color-ultra-dark);
+  }
+
+  .text-nile-blue {
+    color: var(--color-nile-blue);
+  }
+
+  .font-bebas {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 }
