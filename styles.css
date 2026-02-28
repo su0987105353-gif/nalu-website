@@ -50,19 +50,20 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* Desktop: fixed background parallax */
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+/* Mobile devices: disable fixed backgrounds, use scroll instead */
+@media (max-width: 768px) {
+  .bg-fixed {
+    background-attachment: scroll !important;
+  }
+}
+
 /* Utility for fixed background images */
 @layer utilities {
-  .bg-fixed {
-    background-attachment: fixed;
-  }
-
-  /* Mobile devices: disable fixed backgrounds, use scroll instead */
-  @media (max-width: 768px) {
-    .bg-fixed {
-      background-attachment: scroll;
-    }
-  }
-
   .text-ultra-dark {
     color: var(--color-ultra-dark);
   }
