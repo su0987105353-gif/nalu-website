@@ -5,27 +5,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WITIN WATERS Rafting</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Stylesheet (generated from build process) -->
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Google Fonts with font-display: swap for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
     rel="stylesheet">
-  <style>
-    /* 啟用平滑捲動 (Smooth Scroll) */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-          }
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Witin Waters Rafting - Direct local rafting operator in Jinja, Uganda. Experience the White Nile with elite guides, professional safety, and competitive pricing.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Witin Waters Rafting",
+    "description": "Direct local whitewater rafting operator in Jinja, Uganda. Elite guides, professional safety, competitive pricing.",
+    "url": "https://witinwatersrafting.com",
+    "image": "https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-into-bogugo-bow-high-hero.webp",
+    "telephone": "+256759476443",
+    "email": "basogawitin34@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bujagali",
+      "addressLocality": "Jinja",
+      "addressCountry": "UG"
+    },
+    "serviceArea": {
+      "@type": "Place",
+      "name": "White Nile, Jinja"
+    },
+    "areaServed": ["UG", "KE", "TZ", "RW"],
+    "priceRange": "$35-$125",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Rafting Experiences",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Half-Day Family Float",
+          "priceCurrency": "USD",
+          "price": "35",
+          "description": "Perfect for families (ages 3+) and beginners"
+        },
+        {
+          "@type": "Offer",
+          "name": "Half-Day Whitewater",
+          "priceCurrency": "USD",
+          "price": "85",
+          "description": "Ultimate adrenaline rush with Grade 3-4 rapids"
+        },
+        {
+          "@type": "Offer",
+          "name": "Full-Day Extreme",
+          "priceCurrency": "USD",
+          "price": "100",
+          "description": "Conquer every Class V rapid and legendary falls"
         }
-      }
-    }
+      ]
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100076788665963",
+      "https://www.instagram.com/basogawitin/"
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Witin Waters Rafting",
+    "legalName": "Witin Waters Rafting",
+    "logo": "https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-into-bogugo-bow-high-hero.webp",
+    "url": "https://witinwatersrafting.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+256759476443",
+      "email": "basogawitin34@gmail.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bujagali",
+      "addressLocality": "Jinja",
+      "addressCountry": "UG"
+    },
+    "foundingDate": "2024",
+    "description": "100% locally rooted, professional whitewater rafting operator in Jinja, Uganda"
+  }
   </script>
 </head>
 
@@ -80,7 +153,7 @@
   </nav>
 
   <section class="relative h-screen flex flex-col items-center justify-center overflow-hidden parallax-container">
-    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+    <div class="absolute w-full h-full -z-20 bg-fixed bg-cover bg-center"
       style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-into-bogugo-bow-high-hero.webp');">
     </div>
     <div class="absolute inset-0 bg-black/40 -z-10"></div>
@@ -99,8 +172,8 @@
 
       <div class="flex flex-col h-full">
         <div class="overflow-hidden mb-6 rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour1.webp"
-            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour1.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105" alt="Half-Day Family Float">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Half-Day Family Float</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Perfect for families (ages 3+) and beginners. Experience
@@ -159,8 +232,8 @@
 
       <div class="flex flex-col h-full">
         <div class="overflow-hidden mb-6 rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour2.webp"
-            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour2.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105" alt="Half-Day Whitewater">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Half-Day Whitewater</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Experience the ultimate White Nile adrenaline rush.
@@ -214,9 +287,9 @@
 
       <div class="flex flex-col h-full">
         <div class="overflow-hidden mb-6 rounded-lg shadow-xl">
-          <img
+          <img loading="lazy"
             src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-vertical-splash-hero.webp"
-            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105" alt="Full-Day Extreme">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Full-Day Extreme</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Conquer every Class V rapid on the mighty White Nile.
@@ -269,7 +342,7 @@
     </div>
 
     <div class="relative w-full aspect-video overflow-hidden bg-black rounded-xl shadow-2xl mb-20 z-10">
-      <iframe class="absolute top-0 left-0 w-full h-full"
+      <iframe loading="lazy" class="absolute top-0 left-0 w-full h-full"
         src="https://www.youtube.com/embed/I6vYXLSP0W0?autoplay=1&mute=1&loop=1&playlist=I6vYXLSP0W0&controls=1&rel=0&playsinline=1"
         title="Witin Waters Adventure" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -281,8 +354,8 @@
 
       <div class="flex flex-col h-full">
         <div class="overflow-hidden mb-6 rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-nalu-image/tour4k.webp"
-            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-nalu-image/tour4k.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105" alt="Custom Kayaking">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Custom Kayaking</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Designed for all skill levels! With a professional guide
@@ -320,8 +393,8 @@
 
       <div class="flex flex-col h-full">
         <div class="overflow-hidden mb-6 rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour5s.webp"
-            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour5s.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105" alt="Skill-Building Lesson">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Skill-Building Lesson</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">From basic paddling strokes to mastering the Eskimo
@@ -359,8 +432,8 @@
 
       <div class="flex flex-col h-full">
         <div class="overflow-hidden mb-6 rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-nalu-image/tour6.webp"
-            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-nalu-image/tour6.webp"
+            class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105" alt="Playboat Training">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Playboat Training</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">We take you to the most famous and dynamic surf spots on
@@ -402,8 +475,8 @@
   <section id="whyus"
     class="relative py-32 px-6 flex flex-col items-center justify-center overflow-hidden parallax-container min-h-[400px]">
 
-    <div class="parallax-bg absolute w-full left-0 -z-20 bg-cover bg-top will-change-transform"
-      style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-drop-bowdown-hero.webp'); height: calc(100% + 80vh); top: -50vh;">
+    <div class="absolute w-full h-full -z-20 bg-fixed bg-cover bg-top"
+      style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-drop-bowdown-hero.webp');">
     </div>
 
     <div class="absolute inset-0 bg-black/60 -z-10"></div>
@@ -431,21 +504,24 @@
               fraction of the cost.</p>
           </div>
           <div class="w-full md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/why-budget.webp"
+            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/why-budget.webp"
               alt="Zero Agency Markups"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           </div>
         </div>
 
-        <div class="relative rounded-2xl overflow-hidden shadow-lg group min-h-[350px]">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-nalu-image/why-photos.webp"
-            alt="Free Pro Media"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full">
-            <h3 class="text-xl font-serif font-bold text-white mb-2">Free Pro Media</h3>
-            <p class="text-[14px] text-gray-300 leading-relaxed">Complimentary HD photography & video. A $50 value
-              included free.</p>
+        <div
+          class="bg-black text-white rounded-2xl overflow-hidden shadow-lg flex flex-col group border border-gray-800">
+          <div class="relative w-full aspect-[4/3] bg-gray-900 pointer-events-none overflow-hidden">
+            <iframe loading="lazy"
+              class="absolute top-1/2 left-1/2 w-[170%] h-[170%] -translate-x-1/2 -translate-y-1/2 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              src="https://www.youtube.com/embed/ez6_Ftd3fps?autoplay=1&mute=1&loop=1&playlist=ez6_Ftd3fps&controls=0&showinfo=0&rel=0&playsinline=1"
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="p-8 mt-auto z-10 bg-black">
+            <h3 class="text-xl font-serif font-bold text-[#f3ff00] mb-2">Elite Safety Ratios</h3>
+            <p class="text-[14px] text-gray-400 leading-relaxed">Watch our guide execute a flawless, split-second
+              rescue. We pair unmatched local expertise with strict safety ratios exceeding industry standards.</p>
           </div>
         </div>
 
@@ -457,7 +533,7 @@
               src="https://www.youtube.com/embed/1hDilkr6K2A?autoplay=1&mute=1&loop=1&playlist=1hDilkr6K2A&controls=0&showinfo=0&rel=0&playsinline=1"
               frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-          <div class="p-8 mt-auto">
+          <div class="p-8 mt-auto z-10 bg-black">
             <h3 class="text-xl font-serif font-bold text-white mb-2">Push the Limits</h3>
             <p class="text-[14px] text-gray-400 leading-relaxed">Conquer the extreme at Kalagala Falls with our
               world-class safety experts.</p>
@@ -473,7 +549,7 @@
               river is maximized for your ultimate adventure.</p>
           </div>
           <div class="w-full md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/why-route.webp"
+            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/why-route.webp"
               alt="The Full River Experience"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           </div>
@@ -482,23 +558,22 @@
         <div
           class="md:col-span-2 bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row group border border-gray-800">
           <div class="p-8 md:p-12 flex flex-col justify-center w-full md:w-1/2 z-10 bg-black">
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#f3ff00] mb-4">Elite Safety Ratios</h3>
-            <p class="text-[15px] text-gray-300 leading-relaxed font-medium">Watch our guide execute a flawless,
-              split-second rescue. Thrills are guaranteed, but safety is the one line we never compromise on. We pair
-              unmatched local expertise with a strict safety-kayaker-to-guest ratio that exceeds industry standards.</p>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white mb-4">Free Pro Media <span
+                class="text-[#f3ff00] block mt-1 text-xl">AI Enhanced Dynamics</span></h3>
+            <p class="text-[15px] text-gray-300 leading-relaxed font-medium">Unlike agencies that charge extra for raw
+              files, we include a complimentary high-resolution media package with every direct booking. Your
+              high-action moments are professionally AI-enhanced for optimal color, dynamic lighting, and realistic
+              water details, delivered ready for your social media feed.</p>
           </div>
-
-          <div class="w-full md:w-1/2 relative min-h-[400px] bg-black pointer-events-none overflow-hidden">
-            <iframe
-              class="absolute top-1/2 left-1/2 w-[170%] h-[170%] -translate-x-1/2 -translate-y-1/2 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-              src="https://www.youtube.com/embed/ez6_Ftd3fps?autoplay=1&mute=1&loop=1&playlist=ez6_Ftd3fps&controls=0&showinfo=0&rel=0&playsinline=1"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-            </iframe>
+          <div class="w-full md:w-1/2 relative min-h-[400px] overflow-hidden">
+            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-nalu-image/why-photos.webp"
+              alt="Free Pro Media AI Enhanced"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           </div>
         </div>
 
         <div class="relative rounded-2xl overflow-hidden shadow-lg group min-h-[250px] md:min-h-full">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/why-local.webp"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/why-local.webp"
             alt="100% Local Rooted"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -530,7 +605,7 @@
   </section>
 
   <section id="about" class="relative h-[60vh] flex flex-col justify-center overflow-hidden parallax-container">
-    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+    <div class="absolute w-full h-full -z-20 bg-fixed bg-cover bg-center"
       style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-splash-upside-down-hero.webp');">
     </div>
     <div class="absolute inset-0 bg-black/50 -z-10"></div>
@@ -568,7 +643,7 @@
         <div id="community-slider" class="flex w-full h-full transition-transform duration-500 ease-in-out">
 
           <div class="w-full h-full flex-shrink-0 relative bg-black">
-            <iframe
+            <iframe loading="lazy"
               src="https://www.youtube.com/embed/R88Y6V9bsw4?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=R88Y6V9bsw4"
               title="Witin Waters Community Video" class="w-full h-full pointer-events-auto" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -615,8 +690,8 @@
     </div>
   </section>
   <section id="team" class="relative py-24 md:py-32 flex flex-col justify-center overflow-hidden parallax-container">
-    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
-      style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-nalu-ashlo-style-drop.webp');">
+    <div class="absolute w-full h-full -z-20 bg-fixed bg-cover bg-center"
+      style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-vertical-splash-hero.webp');">
     </div>
     <div class="absolute inset-0 bg-black/60 -z-10"></div>
 
@@ -636,7 +711,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-[100%] mx-auto">
 
         <div class="group relative overflow-hidden bg-black rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-witin.webp"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-witin.webp"
             alt="Basoga Witin"
             class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
           <div
@@ -647,7 +722,7 @@
         </div>
 
         <div class="group relative overflow-hidden bg-black rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-peter.webp"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-peter.webp"
             alt="Emoti Peter"
             class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
           <div
@@ -658,7 +733,7 @@
         </div>
 
         <div class="group relative overflow-hidden bg-black rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-junior.webp"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-junior.webp"
             alt="Junior"
             class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
           <div
@@ -669,7 +744,7 @@
         </div>
 
         <div class="group relative overflow-hidden bg-black rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-amos1.webp" alt="Amos"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-amos1.webp" alt="Amos"
             class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
           <div
             class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-8">
@@ -679,7 +754,7 @@
         </div>
 
         <div class="group relative overflow-hidden bg-black rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-hamisi.webp"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-hamisi.webp"
             alt="Hamisi"
             class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
           <div
@@ -690,7 +765,7 @@
         </div>
 
         <div class="group relative overflow-hidden bg-black rounded-lg shadow-xl">
-          <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-jackie.webp"
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-jackie.webp"
             alt="Jackie"
             class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
           <div
@@ -777,6 +852,21 @@
                 Rafting in Jinja is great all year round! The White Nile water is consistently 27°C (80°F).
               </div>
             </details>
+
+            <details
+              class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 open:bg-white open:shadow-lg open:border-transparent">
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-gray-900 hover:text-black">
+                Is photography included?
+                <span class="text-xl transition-transform duration-300 group-open:rotate-180">↓</span>
+              </summary>
+              <div class="px-6 pb-6 text-[15px] text-gray-600 leading-relaxed">
+                Yes! Unlike agencies that charge extra for raw files, every direct booking includes a complimentary
+                high-resolution media package. Your adventure photos are professionally AI-enhanced for optimal color,
+                lighting, and realistic action dynamics, delivered ready for your social media.
+              </div>
+            </details>
+
           </div>
 
           <p class="mt-8 text-sm text-gray-500 text-center lg:text-left">
@@ -791,7 +881,7 @@
 
   <section id="book"
     class="relative py-24 flex flex-col items-center justify-center overflow-hidden parallax-container min-h-screen">
-    <div class="parallax-bg absolute w-full h-[130%] -top-[15%] bg-cover bg-center -z-20 will-change-transform"
+    <div class="absolute w-full h-full -z-20 bg-fixed bg-cover bg-center"
       style="background-image: url('https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-bigwave-tension.webp');">
     </div>
     <div class="absolute inset-0 bg-black/60 -z-10"></div>
@@ -910,180 +1000,18 @@
     </svg>
   </a>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 視差滾動腳本
-      const parallaxContainers = document.querySelectorAll('.parallax-container');
-      let ticking = false;
-
-      function updateParallax() {
-        const scrolled = window.scrollY;
-        const windowHeight = window.innerHeight;
-
-        parallaxContainers.forEach(container => {
-          const bg = container.querySelector('.parallax-bg');
-          if (!bg) return;
-          const rect = container.getBoundingClientRect();
-          const elementTop = rect.top + scrolled;
-
-          if (scrolled + windowHeight > elementTop && scrolled < elementTop + container.offsetHeight) {
-            const yPos = (scrolled - elementTop) * 0.2;
-            bg.style.transform = `translate3d(0, ${yPos}px, 0)`;
-          }
-        });
-        ticking = false;
-      }
-
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(updateParallax);
-          ticking = true;
-        }
-      }, { passive: true });
-      updateParallax();
-      // Community Slider Logic
-      let currentSlide = 0;
-      const sliderContainer = document.getElementById('community-slider');
-      // 計算有幾個幻燈片 (子元素數量)
-      const totalSlides = sliderContainer ? sliderContainer.children.length : 0;
-
-      function updateSlidePosition() {
-        if (sliderContainer) {
-          sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-      }
-
-      // 將函數綁定到 window，讓 HTML 的 onclick 可以順利呼叫
-      window.nextSlide = function () {
-        if (totalSlides > 0) {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          updateSlidePosition();
-        }
-      }
-
-      window.prevSlide = function () {
-        if (totalSlides > 0) {
-          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-          updateSlidePosition();
-        }
-      }
-      // 手機版漢堡選單邏輯
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const mobileLinks = document.querySelectorAll('.mobile-link');
-
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden'); // 防止背景滾動
-      });
-
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        });
-      });
-
-      // ✅ 修復的 Back to Top 按鈕邏輯
-      const backToTopBtn = document.getElementById('backToTop');
-      if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 500) {
-            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
-          } else {
-            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
-            backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-          }
-        }, { passive: true });
-      }
-    });
-    // Booking Form Logic
-    const bookingForm = document.getElementById('bookingForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const formMessage = document.getElementById('formMessage');
-
-    // 請務必將下方引號內的網址替換為全新部署的 GAS Web App URL
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbxX34dMw9eHCZG30u4YaB2mjbj-ebtwUYQmaquXSdfnq1NE9pgqZSM_bkz4NvKvWhl1/exec';
-
-    if (bookingForm) {
-      const dateInput = document.getElementById('date');
-      if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.min = today;
-      }
-
-      bookingForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        submitBtn.innerText = 'Sending...';
-        submitBtn.disabled = true;
-        submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
-        formMessage.classList.add('hidden');
-
-        const formData = new FormData(bookingForm);
-        const urlEncodedData = new URLSearchParams(formData);
-
-        fetch(GAS_URL, {
-          method: 'POST',
-          body: urlEncodedData
-        })
-          .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.json();
-          })
-          .then(data => {
-            if (data.success) {
-              alert('✅ ' + data.message);
-              formMessage.innerText = data.message;
-              formMessage.className = 'text-green-400 text-center text-sm font-bold mt-2 block';
-              bookingForm.reset();
-            } else {
-              throw new Error(data.message || 'Server returned false success status.');
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('❌ Submission failed. Please try again or contact us via WhatsApp.');
-            formMessage.innerText = 'Something went wrong. Please try WhatsApp directly.';
-            formMessage.className = 'text-red-400 text-center text-sm font-bold mt-2 block';
-          })
-          .finally(() => {
-            submitBtn.innerText = 'Confirm Booking';
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-          });
-      });
-    }
-    // 4. JavaScript Update: Insert at the end of the existing <script> tag
-    const priceMatchCheckbox = document.getElementById('priceMatch');
-    const quoteContainer = document.getElementById('quoteDetailsContainer');
-    const quoteDetails = document.getElementById('quoteDetails');
-
-    if (priceMatchCheckbox && quoteContainer) {
-      priceMatchCheckbox.addEventListener('change', function () {
-        if (this.checked) {
-          quoteContainer.classList.remove('max-h-0', 'opacity-0');
-          quoteContainer.classList.add('max-h-32', 'opacity-100');
-        } else {
-          quoteContainer.classList.remove('max-h-32', 'opacity-100');
-          quoteContainer.classList.add('max-h-0', 'opacity-0');
-          quoteDetails.value = '';
-        }
-      });
-    }
-  </script>
+  <script src="./script.js" defer></script>
   <footer class="bg-black py-16 px-6 md:px-10 border-t border-gray-900">
     <div class="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 
       <div class="text-center md:text-left">
         <h2 class="text-2xl font-serif font-bold text-[#f3ff00] tracking-wider uppercase mb-2">Witin Waters</h2>
         <p class="text-[13px] text-gray-500">© 2026 Witin Waters. All rights reserved.</p>
-        <p class="text-[12px] text-gray-600 mt-1">Designed by Wang</p>
+        <p class="text-[12px] text-gray-600 mt-1">Designed by Wang Wanwan</p>
+        <p class="text-[11px] text-gray-600 mt-2 italic">📸 AI-Enhanced. Just like your IG filters. Real action by Witin, visual punch by Gemini AI. The skills are real, but the river is even better in person!</p>
       </div>
 
       <div class="flex flex-col items-center md:items-end gap-4 md:mr-20">
-
         <a href="mailto:basogawitin34@gmail.com"
           class="flex items-center gap-2 text-[14px] text-gray-400 hover:text-white transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1111,7 +1039,6 @@
             </svg>
           </a>
         </div>
-
       </div>
     </div>
   </footer>
