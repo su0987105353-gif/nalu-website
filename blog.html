@@ -122,9 +122,9 @@
     <script defer src="https://cdn.vercel-cdn.com/insights/script.js"></script>
   </head>
 
-  <body id="top" class="font-sans text-gray-800 antialiased bg-white relative">
-    <header class="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center text-white bg-black/50 backdrop-blur-md transition-all">
-      <a href="index.html" class="text-2xl font-serif font-bold text-white tracking-widest uppercase hover:text-[#f3ff00] transition-colors z-50"> Witin Waters </a>
+  <body id="top" class="font-sans text-gray-800 antialiased bg-white relative overflow-x-hidden">
+    <header class="fixed top-0 left-0 w-full z-50 px-4 py-4 sm:px-6 sm:py-6 flex justify-between items-center text-white bg-black/50 backdrop-blur-md transition-all">
+      <a href="index.html" class="text-xl sm:text-2xl font-serif font-bold text-white tracking-[0.12em] uppercase hover:text-[#f3ff00] transition-colors z-50"> Witin Waters </a>
       <nav class="hidden lg:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
         <a href="index.html#trips" class="hover:opacity-70 transition-opacity">Trips</a>
         <a href="index.html#whyus" class="hover:opacity-70 transition-opacity">Why Us</a>
@@ -134,15 +134,15 @@
         <a href="blog.html" class="hover:opacity-70 transition-opacity">Blog/攻略</a>
       </nav>
 
-      <div class="flex items-center gap-3 mr-3 lg:mr-0">
-        <button id="langToggleBtn" type="button" class="px-3 py-2 rounded-full text-[11px] font-bold uppercase tracking-wide border border-white/60 hover:bg-white hover:text-black transition-colors whitespace-nowrap leading-none shrink-0" aria-label="Switch language">简体中文</button>
+      <div class="flex items-center gap-2 sm:gap-3 mr-2 sm:mr-3 lg:mr-0">
+        <button id="langToggleBtn" type="button" class="px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wide border border-white/60 hover:bg-white hover:text-black transition-colors whitespace-nowrap leading-none shrink-0" aria-label="Switch language">简体中文</button>
         <div class="hidden lg:block">
           <a href="index.html#book" class="bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">Book Now</a>
         </div>
       </div>
 
       <!-- 手機漢堡菜單按鈕 -->
-      <button id="mobileMenuBtn" class="lg:hidden flex flex-col space-y-1.5 focus:outline-none ml-2">
+      <button id="mobileMenuBtn" class="lg:hidden flex flex-col space-y-1.5 focus:outline-none ml-1.5 sm:ml-2">
         <span class="w-6 h-0.5 bg-white transition-all"></span>
         <span class="w-6 h-0.5 bg-white transition-all"></span>
         <span class="w-6 h-0.5 bg-white transition-all"></span>
@@ -150,7 +150,7 @@
     </header>
 
     <!-- 手機版導航菜單 -->
-    <nav id="mobileMenu" class="fixed top-20 left-0 w-full bg-black/95 backdrop-blur-md z-40 lg:hidden flex-col space-y-4 p-6 text-white hidden">
+    <nav id="mobileMenu" class="fixed top-[72px] sm:top-20 left-0 w-full bg-black/95 backdrop-blur-md z-40 lg:hidden flex-col space-y-4 p-5 sm:p-6 text-white hidden">
       <a href="index.html#trips" class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">Trips</a>
       <a href="index.html#whyus" class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">Why Us</a>
       <a href="index.html#about" class="mobile-link text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity block">About</a>
@@ -160,16 +160,16 @@
       <a href="index.html#book" class="mobile-link bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest inline-block">Book Now</a>
     </nav>
 
-    <section id="blog-post" class="relative py-24 px-6 lg:px-10 font-sans overflow-hidden parallax-container" data-parallax-speed="0.42">
+    <section id="blog-post" class="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-10 font-sans overflow-hidden parallax-container" data-parallax-speed="0.42">
       <div class="parallax-bg absolute w-full h-[145%] -top-[22%] bg-cover bg-center -z-20 will-change-transform" style="background-image: url(&quot;https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/uganda-kampala-street.webp&quot;)"></div>
       <div class="absolute inset-0 bg-black/15 -z-10"></div>
-      <article class="relative z-10 max-w-3xl mx-auto bg-white/75 backdrop-blur-sm p-8 lg:p-14 rounded-2xl shadow-xl border border-white/70">
+      <article class="relative z-10 max-w-3xl mx-auto bg-white/75 backdrop-blur-sm p-5 sm:p-8 lg:p-14 rounded-2xl shadow-xl border border-white/70">
         <div class="flex items-center gap-3 mb-6">
           <span class="bg-amber-100 text-amber-900 text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded">防坑指南</span>
           <span class="text-gray-400 text-sm">5 min read</span>
         </div>
 
-        <h1 class="text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-8 tracking-tight">乌干达金贾漂流避坑：你交的140美金，到底去了哪里？</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-8 tracking-tight break-words">乌干达金贾漂流避坑：你交的140美金，到底去了哪里？</h1>
 
         <div class="flex items-center gap-4 mb-10 pb-8 border-b border-gray-100">
           <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-witin.webp" alt="Witin" class="w-12 h-12 rounded-full object-cover" />
@@ -179,14 +179,14 @@
           </div>
         </div>
 
-        <div class="space-y-6 text-[16px] lg:text-[17px] text-gray-700 leading-relaxed font-medium">
+        <div class="space-y-6 text-[16px] lg:text-[17px] text-gray-700 leading-relaxed font-medium break-words">
           <p>来乌干达 (Uganda) 自由行，金贾 (Jinja) 的白尼罗河 5 级漂流绝对是绕不开的终极体验。但只要你打开各大旅游平台，或者去坎帕拉的酒店前台询问，你会发现报价出奇的一致：<strong class="text-black bg-gray-100 px-1">全天行程 $140 美金</strong>。</p>
 
           <p>这套定价体系，是几十年前为了欧美“富裕观光客”量身定制的。但作为精打细算的背包客或自由行玩家，你一定会问：<strong>这 140 美金，到底买到了什么？它真的值这么多钱吗？</strong></p>
 
           <p>今天，作为在尼罗河上划了十几年船的本地向导，我想跟你揭开这个行业里大家都不愿意说的秘密。</p>
 
-          <div class="my-10 p-6 lg:p-8 bg-slate-800/90 text-slate-100 rounded-xl border-l-4 border-amber-300">
+          <div class="my-10 p-5 sm:p-6 lg:p-8 bg-slate-800/90 text-slate-100 rounded-xl border-l-4 border-amber-300">
             <h3 class="text-xl font-bold mb-4 text-amber-200">真相一：旅行社（中间商）的无情抽成</h3>
             <p class="text-gray-300 text-[15px] leading-relaxed">当你向旅行社、Agent 或酒店预订行程时，他们只需要打一个电话把你的名字报给漂流公司，就能立刻从你的 $140 报名费中，<strong>无情抽走 $30 美金的佣金</strong>。你以为你买的是服务，其实有将近四分之一的钱，只是为“资讯差”买了单。</p>
           </div>
@@ -211,24 +211,24 @@
 
           <p class="mt-8">跳过中间商，拒绝行业剥削。用更低的预算，获得相同甚至更棒的体验。这不仅是精明的旅行策略，更是对当地人最直接的尊重与支持。</p>
 
-          <div class="mt-12 text-center bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <div class="mt-12 text-center bg-gray-50 p-5 sm:p-8 rounded-xl border border-gray-200">
             <h4 class="text-lg font-bold text-gray-900 mb-2">准备好体验真实的白尼罗河了吗？</h4>
             <p class="text-sm text-gray-500 mb-6">无隐藏费用，无中介抽成，直接对接本地资深向导。</p>
-            <a href="index.html#book" class="inline-block bg-amber-200 text-slate-900 font-bold uppercase tracking-[0.15em] px-10 py-4 rounded hover:bg-amber-300 transition-colors shadow-lg"> 获取 $100 直营价 </a>
+            <a href="index.html#book" class="block sm:inline-block w-full sm:w-auto text-center bg-amber-200 text-slate-900 text-xs sm:text-sm font-bold uppercase tracking-[0.12em] px-6 sm:px-10 py-3.5 sm:py-4 rounded hover:bg-amber-300 transition-colors shadow-lg"> 获取 $100 直营价 </a>
           </div>
         </div>
       </article>
     </section>
-    <section id="blog-post-2" class="relative py-24 px-6 lg:px-10 font-sans border-t border-gray-100 overflow-hidden parallax-container" data-parallax-speed="0.42">
+    <section id="blog-post-2" class="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-10 font-sans border-t border-gray-100 overflow-hidden parallax-container" data-parallax-speed="0.42">
       <div class="parallax-bg absolute w-full h-[145%] -top-[22%] bg-cover bg-center -z-20 will-change-transform" style="background-image: url(&quot;https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/kampala-taxi-park.webp&quot;)"></div>
       <div class="absolute inset-0 bg-black/20 -z-10"></div>
-      <article class="relative z-10 max-w-3xl mx-auto bg-white/75 backdrop-blur-sm p-8 lg:p-14 rounded-2xl shadow-lg border border-white/70">
+      <article class="relative z-10 max-w-3xl mx-auto bg-white/75 backdrop-blur-sm p-5 sm:p-8 lg:p-14 rounded-2xl shadow-lg border border-white/70">
         <div class="flex items-center gap-3 mb-6">
           <span class="bg-amber-100 text-amber-900 text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded">交通攻略</span>
           <span class="text-gray-400 text-sm">4 min read</span>
         </div>
 
-        <h1 class="text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-8 tracking-tight">别被黑车坑了！乌干达自由行：从坎帕拉到金贾 Matatu 乘坐全攻略</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-8 tracking-tight break-words">别被黑车坑了！乌干达自由行：从坎帕拉到金贾 Matatu 乘坐全攻略</h1>
 
         <div class="flex items-center gap-4 mb-10 pb-8 border-b border-gray-100">
           <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-peter.webp" alt="Peter" class="w-12 h-12 rounded-full object-cover" />
@@ -238,10 +238,10 @@
           </div>
         </div>
 
-        <div class="space-y-6 text-[16px] lg:text-[17px] text-gray-700 leading-relaxed font-medium">
+        <div class="space-y-6 text-[16px] lg:text-[17px] text-gray-700 leading-relaxed font-medium break-words">
           <p>首都坎帕拉 (Kampala) 到漂流大本营金贾 (Jinja) 大约有 80 多公里的路程。这段路对于跟团游的人来说，就是在旅行大巴上睡一觉的事；但对于自由行或背包客来说，却是<strong>乌干达“被宰率”最高的路段之一</strong>。</p>
 
-          <div class="my-10 p-6 lg:p-8 bg-slate-800/90 text-slate-100 rounded-xl border-l-4 border-amber-300">
+          <div class="my-10 p-5 sm:p-6 lg:p-8 bg-slate-800/90 text-slate-100 rounded-xl border-l-4 border-amber-300">
             <h3 class="text-xl font-bold mb-3 text-amber-200">⚠️ 本地老司机 Mutabo 的忠告</h3>
             <p class="text-gray-300 text-[15px] leading-relaxed italic">“乌干达的交通物价是极度不透明的。如果观光客随便在路边拦计程车 (Special Hire) 甚至包车，司机看你是外国人，开价几十甚至上百美金都不稀奇。想要省钱，必须像本地人一样坐车。”</p>
             <p class="text-sm text-gray-500 mt-4">— Mutabo 是我的表哥，也是在坎帕拉和金贾之间跑了多年的本地接驳老司机。</p>
@@ -256,7 +256,7 @@
           <p>当你到达广场边缘时，会有无数热情的“黄牛”围上来，拉客、抢行李，问你要去哪里。<strong>千万、千万不要理会路边随意招客的人！</strong> 跟着他们走，你大概率会被带到绕路、乱收费的黑车上。</p>
           <p>你需要做的是：径直走进广场，寻找乌干达的特色小巴——<strong>Matatu</strong>。广场里有很多划定的区域，<strong>一定要找到立着写有「Jinja」字样铁牌的地方</strong>。这才是正规排班发车的地点，价格完全透明，上车买票，童叟无欺。</p>
 
-          <div class="grid grid-cols-2 gap-4 my-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
             <div class="bg-transparent p-4 rounded-lg border border-white/70 text-center shadow-sm" style="background-color: rgba(255, 255, 255, 0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
               <div class="text-sm text-gray-500 mb-1">包计程车 (坑客价)</div>
               <div class="text-xl font-black text-red-500 line-through">$50 - $100+</div>
@@ -277,25 +277,25 @@
 
           <p>我们作为本地营运商，提供 <strong>Jinja 镇上到漂流大本营的免费接送服务！</strong> 不会像有些公司那样找借口额外收取接驳费。</p>
 
-          <div class="mt-12 text-center bg-slate-800/90 p-8 rounded-xl border border-slate-600">
+          <div class="mt-12 text-center bg-slate-800/90 p-5 sm:p-8 rounded-xl border border-slate-600">
             <h4 class="text-lg font-bold text-amber-200 mb-2">用本地价搞定交通，用直营价搞定漂流</h4>
             <p class="text-sm text-slate-300 mb-6">把省下来的钱，留给尼罗河上最刺激的 19 公里 5 级激流挑战。</p>
-            <a href="index.html#book" class="inline-block bg-amber-200 text-slate-900 font-bold uppercase tracking-[0.15em] px-10 py-4 rounded hover:bg-amber-300 transition-colors shadow-lg"> 预订漂流 & 预约免费接送 </a>
+            <a href="index.html#book" class="block sm:inline-block w-full sm:w-auto text-center bg-amber-200 text-slate-900 text-xs sm:text-sm font-bold uppercase tracking-[0.12em] px-6 sm:px-10 py-3.5 sm:py-4 rounded hover:bg-amber-300 transition-colors shadow-lg"> 预订漂流 & 预约免费接送 </a>
           </div>
         </div>
       </article>
     </section>
 
-    <section id="blog-post-3" class="relative py-24 px-6 lg:px-10 font-sans border-t border-gray-200 overflow-hidden parallax-container" data-parallax-speed="0.42">
+    <section id="blog-post-3" class="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-10 font-sans border-t border-gray-200 overflow-hidden parallax-container" data-parallax-speed="0.42">
       <div class="parallax-bg absolute w-full h-[145%] -top-[22%] bg-cover bg-center -z-20 will-change-transform" style="background-image: url(&quot;https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/uganda-jinja-house-old.webp&quot;)"></div>
       <div class="absolute inset-0 bg-black/25 -z-10"></div>
-      <article class="relative z-10 max-w-3xl mx-auto bg-white/75 backdrop-blur-sm p-8 lg:p-14 rounded-2xl shadow-lg border border-white/70">
+      <article class="relative z-10 max-w-3xl mx-auto bg-white/75 backdrop-blur-sm p-5 sm:p-8 lg:p-14 rounded-2xl shadow-lg border border-white/70">
         <div class="flex items-center gap-3 mb-6">
           <span class="bg-amber-100 text-amber-900 text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded">安全揭秘</span>
           <span class="text-gray-400 text-sm">5 min read</span>
         </div>
 
-        <h1 class="text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-8 tracking-tight">旱鸭子能玩尼罗河 5 级漂流吗？10年资深向导揭秘行业“救生潜规则”</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-8 tracking-tight break-words">旱鸭子能玩尼罗河 5 级漂流吗？10年资深向导揭秘行业“救生潜规则”</h1>
 
         <div class="flex items-center gap-4 mb-10 pb-8 border-b border-gray-100">
           <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/team-amos1.webp" alt="Amos" class="w-12 h-12 rounded-full object-cover" />
@@ -305,14 +305,14 @@
           </div>
         </div>
 
-        <div class="space-y-6 text-[16px] lg:text-[17px] text-gray-700 leading-relaxed font-medium">
+        <div class="space-y-6 text-[16px] lg:text-[17px] text-gray-700 leading-relaxed font-medium break-words">
           <p>每天带客下水前，岸边总有人拉着我问同一个问题：<strong class="text-gray-900">“Amos，我完全不会游泳，掉进 5 级激流里会死吗？”</strong></p>
 
           <p>我在白尼罗河上从事激流救援行业超过 10 年。今天，我可以直接给你一个最底层的答案：<strong class="text-slate-900 bg-amber-100 px-1">不会。</strong> 因为在我们的职业生涯中，接待过最小的客人只有 3 岁，且从未出过任何严重意外。</p>
 
           <p>很多人以为，玩极限运动能全身而退是靠“运气好”或者“胆子大”。大错特错！在真正的激流圈子里，安全从来不靠运气，而是靠极其严苛的、近乎机械化运作的“安全规范”。</p>
 
-          <div class="my-10 p-6 lg:p-8 bg-slate-800/90 text-slate-100 rounded-xl border-l-4 border-amber-300 shadow-xl">
+          <div class="my-10 p-5 sm:p-6 lg:p-8 bg-slate-800/90 text-slate-100 rounded-xl border-l-4 border-amber-300 shadow-xl">
             <h3 class="text-xl font-bold mb-4 text-amber-200">💡 行业核心机密：看懂“救援护航比例”</h3>
             <p class="text-gray-300 text-[15px] leading-relaxed">怎么辨认一家公司是拿你的命在赚钱，还是真正在做专业户外？不要看他们的广告，只看一个硬指标——<strong>救援护航艇 (Safety Kayaker) 的出勤比例。</strong></p>
             <p class="text-gray-300 text-[15px] leading-relaxed mt-3">什么是 Safety Kayaker？就是像我这样，划着灵活的单人皮划艇，在你们的八人橡皮艇周围像护卫舰一样巡逻的专家。</p>
@@ -328,11 +328,11 @@
 
           <p>想象一下，一艘载着 8 个人的橡皮艇翻覆，大家全掉进水里，结果旁边只有 1 个救援艇手，甚至根本没有专业护航！主向导根本顾不过来，旱鸭子游客只能在激流中绝望地随波逐流、喝水呛水。这就是拿客人的生命在开玩笑！</p>
 
-          <div class="mt-12 text-center bg-white p-8 rounded-xl border-2 border-gray-900 shadow-xl">
+          <div class="mt-12 text-center bg-white p-5 sm:p-8 rounded-xl border-2 border-gray-900 shadow-xl">
             <h4 class="text-xl font-black text-gray-900 mb-3">在 Witin Waters，我们怎么做？</h4>
             <p class="text-gray-600 mb-6">我们严格执行超越行业标准的 <strong class="text-slate-900 bg-amber-100 px-2 py-1 rounded">1:2 顶配救援比例</strong>。这意味着每一艘橡皮艇，我们至少配备两名高级别的 Safety Kayaker 贴身护航。</p>
             <p class="text-sm text-gray-500 mb-8 italic">“我们生在尼罗河，长在尼罗河。哪里有暗流、哪里有漩涡，我们闭着眼睛都知道。把命交给懂水性的当地人，你只需要负责尖叫和享受。”</p>
-            <a href="index.html#book" class="inline-block bg-slate-800 text-amber-100 font-bold uppercase tracking-[0.15em] px-10 py-4 rounded hover:bg-slate-700 transition-colors shadow-lg"> 预约专业团队护航 </a>
+            <a href="index.html#book" class="block sm:inline-block w-full sm:w-auto text-center bg-slate-800 text-amber-100 text-xs sm:text-sm font-bold uppercase tracking-[0.12em] px-6 sm:px-10 py-3.5 sm:py-4 rounded hover:bg-slate-700 transition-colors shadow-lg"> 预约专业团队护航 </a>
           </div>
         </div>
       </article>
