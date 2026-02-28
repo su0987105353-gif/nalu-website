@@ -121,8 +121,18 @@
         <a href="#prep" class="hover:opacity-70 transition-opacity">Prep & FAQ</a>
       </nav>
 
-      <div class="hidden lg:block">
-        <a href="#book" class="bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">Book Now</a>
+      <div class="flex items-center gap-3">
+        <button
+          id="langToggleBtn"
+          type="button"
+          class="px-3 py-2 rounded-full text-[14px] font-bold uppercase tracking-widest border border-white/60 hover:bg-white hover:text-black transition-colors"
+          aria-label="Switch language"
+        >
+          简体中文
+        </button>
+        <div class="hidden lg:block">
+          <a href="#book" class="bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">Book Now</a>
+        </div>
       </div>
 
       <!-- 手機漢堡菜單按鈕 -->
@@ -740,7 +750,268 @@
     </a>
 
     <script>
+      const LANG_STORAGE_KEY = "siteLang";
+      const ORIGINAL_TEXT = new WeakMap();
+      let currentLang = "en";
+
+      const UI_COPY = {
+        en: {
+          langToggleLabel: "Switch language",
+          langToggleText: "简体中文",
+          sending: "Sending...",
+          confirmBooking: "Confirm Booking",
+          submitFailed: "Submission failed. Please try again or contact us via WhatsApp.",
+          formError: "Something went wrong. Please try WhatsApp directly.",
+          documentTitle: "WITIN WATERS Rafting - Whitewater Adventures in Jinja, Uganda",
+          metaDescription:
+            "WITIN WATERS - Direct local rafting operator in Jinja, Uganda. Experience the White Nile with elite guides, professional safety ratios, and competitive pricing. Half-Day Family Float ($40), Whitewater ($85), Full-Day Extreme ($100).",
+        },
+        "zh-CN": {
+          langToggleLabel: "切换语言",
+          langToggleText: "EN",
+          sending: "发送中...",
+          confirmBooking: "确认预订",
+          submitFailed: "提交失败，请重试或通过 WhatsApp 联系我们。",
+          formError: "发生错误，请直接通过 WhatsApp 联系我们。",
+          documentTitle: "WITIN WATERS 漂流 - 乌干达金贾白水探险",
+          metaDescription:
+            "WITIN WATERS 是乌干达金贾本地直营漂流团队。与专业向导一起征服白尼罗河，安全保障更高、价格更透明：家庭半日漂流（$40）、白水半日（$85）、全天极限（$100）。",
+        },
+      };
+
+      const ZH_TEXT_MAP = {
+        Trips: "行程",
+        "Why Us": "为什么选我们",
+        About: "关于我们",
+        Team: "团队",
+        "Prep & FAQ": "准备与常见问题",
+        "Book Now": "立即预订",
+        "Welcome to": "欢迎来到",
+        "Witin Waters Rafting": "Witin Waters 漂流",
+        "Wild • Rapid • Explore": "狂野 • 激流 • 探索",
+        "Choose your adventure": "选择你的冒险行程",
+        "Half-Day Family Float": "半日家庭漂流",
+        "Half-Day Whitewater": "半日白水漂流",
+        "Full-Day Extreme": "全天极限漂流",
+        Adult: "成人",
+        Child: "儿童",
+        "Corporate Agency Price: $50 Adult / $40 Child": "大公司价格：$50（成人）/ $40（儿童）",
+        "Corporate Agency Price: $125": "大公司价格：$125",
+        "Corporate Agency Price: $140": "大公司价格：$140",
+        "Standard Agency Rate: $100": "大公司价格：$100",
+        "Direct Local Price:": "本地直营价格：",
+        "Group Offer": "团体优惠",
+        "Groups of 4+ are eligible for exclusive direct rates. Inquiry for details.": "4 人以上可享专属直营团体价，详情请咨询。",
+        "*Includes free Pro Media package": "*含免费专业影像包",
+        "*Includes premium gear & Pro Media": "*含高级装备与专业影像",
+        "*Includes kayak rental & safety gear": "*含皮划艇租赁与安全装备",
+        "*Includes pro playboat & Pro Media": "*含专业花式艇与影像包",
+        "Custom Kayaking": "定制皮划艇行程",
+        "Skill-Building Lesson": "进阶技巧课程",
+        "Playboat Training": "花式艇训练",
+        "Why Witin Waters?": "为什么选择 Witin Waters？",
+        "Zero Agency Markups": "无中介加价",
+        "Elite Safety Ratios": "精英安全配比",
+        "Push the Limits": "突破极限",
+        "The Full 19km Route": "完整 19 公里线路",
+        "Free Pro Media": "免费专业影像",
+        "AI Enhanced Dynamics": "AI 动态增强",
+        "100% Local Rooted": "100% 本地根植",
+        "Book Your Adventure": "预订你的探险",
+        Bujagali: "Bujagali",
+        "Empowering": "赋能",
+        "Local Youth": "本地青年",
+        "Meet the Team": "认识我们的团队",
+        "Head Team Leader": "团队总负责人",
+        "Team Leader & Media": "领队与媒体",
+        "Senior Guide": "资深向导",
+        "Safety Kayaker": "安全救援艇手",
+        "Trainee Safety Kayaker": "见习安全艇手",
+        "Gear Up for the Nile": "尼罗河装备指南",
+        "What We Provide": "我们提供",
+        "What to Bring": "你需要携带",
+        "High-Float Life Jacket": "高浮力救生衣",
+        "Pro Helmet": "专业头盔",
+        Swimwear: "泳装",
+        Sunscreen: "防晒霜",
+        "Common Questions": "常见问题",
+        "Do I need to be a strong swimmer?": "我需要会游泳吗？",
+        "Is it safe for children?": "儿童参加安全吗？",
+        "What is the best time to visit?": "什么时候来最好？",
+        "Is photography included?": "包含拍摄服务吗？",
+        "More questions?": "还有问题？",
+        "Chat with us on WhatsApp": "在 WhatsApp 联系我们",
+        "Reserve Your Adventure": "预订你的冒险",
+        "Fill out the form below and we will contact you shortly.": "填写下方表单，我们会尽快与你联系。",
+        Name: "姓名",
+        "WhatsApp / Phone": "WhatsApp / 电话",
+        Email: "邮箱",
+        "Travel Date": "出行日期",
+        "Number of People": "人数",
+        "Select Your Adventure": "选择你的项目",
+        "Choose a trip...": "请选择项目...",
+        "Whitewater Rafting": "白水漂流",
+        "Kayaking & Lessons": "皮划艇与课程",
+        "Half-Day Family Float — $40 (Adult)": "半日家庭漂流 — $40（成人）",
+        "Half-Day Family Float — $30 (Child)": "半日家庭漂流 — $30（儿童）",
+        "Half-Day Whitewater — $85": "半日白水漂流 — $85",
+        "Full-Day Extreme — $100": "全天极限漂流 — $100",
+        "Custom Kayaking — $75": "定制皮划艇行程 — $75",
+        "Skill-Building Lesson — $75": "进阶技巧课程 — $75",
+        "Playboat Training — $75": "花式艇训练 — $75",
+        "I have a quote from elsewhere (Price Match)": "我已有其他报价（价格匹配）",
+        "Chat with us": "联系咨询",
+        "Designed by Wang Wanwan": "设计：Wang Wanwan",
+        "© 2026 Witin Waters. All rights reserved.": "© 2026 Witin Waters。保留所有权利。",
+        "Route:": "线路：",
+        "Safety:": "安全：",
+        "Included:": "包含：",
+        "Focus:": "重点：",
+        "Instructor:": "教练：",
+        "Identical 6km (Jaws to Giggitty Giggitty)": "相同 6 公里线路（Jaws 至 Giggitty Giggitty）",
+        "Elite Local Guides & Kid-Friendly Safety Ratio": "精英本地向导与亲子友好安全配比",
+        "Free Pro Media (A $50 Value) & Local Transport & Finish-Line Drinks": "免费专业影像（价值 $50）+ 当地接送 + 终点饮品",
+        "Bujagali Dam to Busowoko Falls (Grades 3-4)": "布贾加利大坝至 Busowoko 瀑布（3-4 级）",
+        "Elite Local Guides & 1:2 Rescue Ratio": "精英本地向导与 1:2 救援配比",
+        "Identical 19km (Inc. Itanda/Kalagala Falls)": "相同 19 公里线路（含 Itanda/Kalagala 瀑布）",
+        "Premium 1:2 Kayaker Rescue Ratio": "高规格 1:2 安全艇救援配比",
+        "Fully Customized to Your Skill Level": "根据你的水平完全定制",
+        "1-on-1 Pro Instructor Guidance": "1 对 1 专业教练指导",
+        "Eskimo Roll & River Reading": "爱斯基摩翻滚与读水技巧",
+        "Step-by-Step Local Expertise": "本地专家分步骤教学",
+        "The Nile's Best Surf Waves": "尼罗河最佳冲浪浪点",
+        "Champion Local Playboater": "冠军级本地花式艇手",
+      };
+
+      const ZH_RICH_TEXT = {
+        "Perfect for families (ages 3+) and beginners. Experience the exact same 6km scenic route as the global agencies. Start with the gentle splashes of Grade 2 rapids like 'Jaws' and 'Pyramid' before transitioning into a peaceful float. Swim, relax, and soak in the breathtaking wildlife of the Nile.":
+          "适合家庭（3岁以上）与初学者。你将体验与大型国际公司完全相同的 6 公里经典线路。先从 “Jaws” 与 “Pyramid” 等 2 级缓流开始，再进入平缓漂流段，轻松游泳、放松身心，感受尼罗河沿岸的自然生态。",
+        "Experience the ultimate White Nile adrenaline rush. Launching right below the Bujagali Dam, you will conquer legendary Grade 3 to Grade 4 rapids like 'Covid Wave' and 'Retro Spect'. The thrilling journey concludes at the majestic Busowoko Falls—matching the exact premium route of large agencies.":
+          "体验白尼罗河的终极肾上腺素。我们从布贾加利大坝下方出发，挑战 “Covid Wave” 与 “Retro Spect” 等传奇 3-4 级激流。行程在壮观的 Busowoko 瀑布结束，与大型公司高端线路完全一致。",
+        "Conquer every Class V rapid on the mighty White Nile. The undisputed climax of the journey brings you to the legendary Class VI Itanda and Kalagala Falls. We run the exact same premium 19km route as the large agencies, ensuring maximum adrenaline.":
+          "征服白尼罗河所有 5 级激流。行程高潮将带你抵达传奇 6 级的 Itanda 与 Kalagala 瀑布。我们提供与大型公司相同的 19 公里高端线路，确保刺激拉满。",
+        "Designed for all skill levels! With a professional guide by your side, paddle head-on against the wildest waves and whirlpools the White Nile has to offer. Go beyond standard tours and forge your own path.":
+          "为所有水平设计！专业向导全程陪同，你将正面迎战白尼罗河最狂野的浪与回旋流，跳脱标准化行程，打造你的专属路线。",
+        "From basic paddling strokes to mastering the Eskimo Roll. Whether you're a complete beginner or looking to advance your technique, we provide a dedicated professional coach tailored just for your progression.":
+          "从基础划桨到爱斯基摩翻滚。无论你是零基础还是想进阶技巧，我们都提供一对一专业教练，按你的节奏定制训练。",
+        "We take you to the most famous and dynamic surf spots on the White Nile to practice! Whether beginner or expert, everyone can find their perfect wave, master freestyle moves, and experience endless fun here.":
+          "我们将带你前往白尼罗河最著名、最有动感的冲浪点练习！无论新手或高手，都能找到适合自己的浪，练习花式动作，享受纯粹乐趣。",
+        "100% Local Rooted · Professional Safety.": "100% 本地团队 · 专业级安全保障。",
+        "We deliver the most honest and high-value whitewater adventures.": "我们提供最真实、最具性价比的白水探险体验。",
+        "We are independent local operators running the exact same 19km Class V routes as the global brands. Large agencies embed heavy commercial commissions into their fees. By booking direct, you skip the middleman, securing the identical premium experience at a fraction of the cost.":
+          "我们是本地独立运营团队，执行与国际品牌一致的 19 公里 5 级线路。大型公司价格包含大量中介佣金；直接预订可跳过中间环节，以更合理的价格获得同等高端体验。",
+        "Watch our guide execute a flawless, split-second rescue. We pair unmatched local expertise with strict safety ratios exceeding industry standards.":
+          "观看我们的向导完成毫秒级精准救援。我们把顶级本地经验与高于行业标准的安全配比结合在一起。",
+        "Conquer the extreme at Kalagala Falls with our world-class safety experts.":
+          "在世界级安全团队护航下，挑战 Kalagala 瀑布的极限段。",
+        "We never cut corners or secretly shorten your time on the water. We guarantee transparent route planning and a full, action-packed journey. Every minute on the river is maximized for your ultimate adventure.":
+          "我们绝不缩水线路或缩短水上时间。路线透明、内容充实，把你在河上的每一分钟都用在真正精彩的体验上。",
+        "Unlike agencies that charge extra for raw files, we include a complimentary high-resolution media package with every direct booking. Your high-action moments are professionally AI-enhanced for optimal color, dynamic lighting, and realistic water details, delivered ready for your social media feed.":
+          "不同于部分机构对原始素材额外收费，我们每笔直订都免费提供高分辨率影像包。高动作画面会进行专业 AI 增强，优化色彩、光线与水花细节，拿到就能发社交媒体。",
+        "Your investment flows directly back into the Bujagali community.": "你的消费将直接回流并支持布贾加利社区。",
+        "Born in Bujagali, raised by the White Nile. Whitewater is our passion, but this community is our home. Beyond the rapids, we guide you into the heart of the village for a deeply authentic Ugandan journey. Experience the real river with the locals who know it best.":
+          "我们生于布贾加利、长于白尼罗河。激流是热爱，社区是家园。除了挑战浪点，我们也会带你走进村落核心，体验真正地道的乌干达在地生活。",
+        "Beyond guiding adventurers from around the world, we believe in the power of giving back. Witin and Peter are dedicated to providing free kayaking lessons to local youth, giving them a valuable skill for life. Last year, we successfully hosted a major community competition, nurturing the next generation of champions on this river!":
+          "除了带领世界各地旅人冒险，我们也坚持回馈社区。Witin 与 Peter 长期为本地青年提供免费皮划艇课程，帮助他们掌握受用一生的技能。去年我们还成功举办大型社区赛事，培养这条河上的下一代冠军！",
+        "It's the people that make Witin Waters so special. Everyone of our crew is dedicated to making your day safe, fun and memorable.":
+          "让 Witin Waters 与众不同的是这支团队。每位成员都致力于让你的每一天都安全、好玩、难忘。",
+        "No. Our high-float life jackets and professional safety kayakers ensure you are safe even if you've never swum in a river before.":
+          "不需要。即使你从未在河里游过泳，我们的高浮力救生衣与专业安全艇手也能确保行程安全。",
+        "Absolutely. Our Family Float route is designed specifically for children (Ages 6+) with Grade 2-3 rapids only.":
+          "当然安全。我们的家庭漂流专为儿童（6 岁以上）设计，仅经过 2-3 级缓和激流。",
+        "Rafting in Jinja is great all year round! The White Nile water is consistently 27°C (80°F).":
+          "金贾全年都适合漂流！白尼罗河水温常年约 27°C（80°F）。",
+        "Yes! Unlike agencies that charge extra for raw files, every direct booking includes a complimentary high-resolution media package. Your adventure photos are professionally AI-enhanced for optimal color, lighting, and realistic action dynamics, delivered ready for your social media.":
+          "是的！与一些小公司不同，直订都包含免费高分辨率影像包。你的探险照片会进行专业 AI 增强，优化色彩、光线和动态效果，拿到即可分享。",
+        "I have a quote from elsewhere (Price Match)": "我已有其他报价（价格匹配）",
+        "📸 AI-Enhanced. Just like your IG filters. Real action by Witin, visual punch by Gemini AI. The skills are real, but the river is even better in person!":
+          "📸 AI AI-Enhanced. Just like your IG filters. Real action by Witin, visual punch by Gemini AI. The skills are real, but the river is even better in person!",
+      };
+
+      function applyTextTranslation(lang) {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          },
+        });
+
+        let node = walker.nextNode();
+        while (node) {
+          if (!ORIGINAL_TEXT.has(node)) {
+            ORIGINAL_TEXT.set(node, node.nodeValue);
+          }
+          const original = ORIGINAL_TEXT.get(node);
+          const trimmed = original.trim();
+          if (lang === "zh-CN" && (ZH_RICH_TEXT[trimmed] || ZH_TEXT_MAP[trimmed])) {
+            const translated = ZH_RICH_TEXT[trimmed] || ZH_TEXT_MAP[trimmed];
+            node.nodeValue = original.replace(trimmed, translated);
+          } else {
+            node.nodeValue = original;
+          }
+          node = walker.nextNode();
+        }
+      }
+
+      function applyAttrTranslation(lang) {
+        const quoteDetails = document.getElementById("quoteDetails");
+        const langToggleBtn = document.getElementById("langToggleBtn");
+        const whatsappBtn = document.querySelector('a[href="https://wa.me/256759476443"]');
+        const facebookLink = document.querySelector('a[aria-label="Follow us on Facebook"], a[href*="facebook.com"]');
+        const instagramLink = document.querySelector('a[aria-label="Follow us on Instagram"], a[href*="instagram.com"]');
+
+        if (langToggleBtn) {
+          langToggleBtn.setAttribute("aria-label", UI_COPY[lang].langToggleLabel);
+          langToggleBtn.textContent = UI_COPY[lang].langToggleText;
+        }
+        if (quoteDetails) {
+          quoteDetails.placeholder =
+            lang === "zh-CN" ? "在此粘贴你现有的报价或机构名称，我们会给你更优价格。" : "Paste your current quote or agency name here. We'll beat it.";
+        }
+        if (whatsappBtn) {
+          whatsappBtn.setAttribute("aria-label", lang === "zh-CN" ? "通过 WhatsApp 联系我们" : "Contact us on WhatsApp");
+        }
+        if (facebookLink) {
+          facebookLink.setAttribute("aria-label", lang === "zh-CN" ? "关注我们的 Facebook" : "Follow us on Facebook");
+        }
+        if (instagramLink) {
+          instagramLink.setAttribute("aria-label", lang === "zh-CN" ? "关注我们的 Instagram" : "Follow us on Instagram");
+        }
+      }
+
+      function applySeoTranslation(lang) {
+        document.documentElement.lang = lang === "zh-CN" ? "zh-CN" : "en";
+        document.title = UI_COPY[lang].documentTitle;
+        const descriptionMeta = document.querySelector('meta[name="description"]');
+        if (descriptionMeta) descriptionMeta.setAttribute("content", UI_COPY[lang].metaDescription);
+      }
+
+      function applyLanguage(lang) {
+        currentLang = lang === "zh-CN" ? "zh-CN" : "en";
+        localStorage.setItem(LANG_STORAGE_KEY, currentLang);
+        applyTextTranslation(currentLang);
+        applyAttrTranslation(currentLang);
+        applySeoTranslation(currentLang);
+      }
+
+      function getUiCopy(key) {
+        return UI_COPY[currentLang][key];
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
+        const langToggleBtn = document.getElementById("langToggleBtn");
+        const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
+        applyLanguage(savedLang === "zh-CN" ? "zh-CN" : "en");
+
+        if (langToggleBtn) {
+          langToggleBtn.addEventListener("click", () => {
+            applyLanguage(currentLang === "en" ? "zh-CN" : "en");
+          });
+        }
+
         // 視差滾動腳本
         const parallaxContainers = document.querySelectorAll(".parallax-container");
         const backToTopBtn = document.getElementById("backToTop");
@@ -786,10 +1057,10 @@
           { passive: true },
         );
         updateOnScroll();
+
         // Community Slider Logic
         let currentSlide = 0;
         const sliderContainer = document.getElementById("community-slider");
-        // 計算有幾個幻燈片 (子元素數量)
         const totalSlides = sliderContainer ? sliderContainer.children.length : 0;
 
         function updateSlidePosition() {
@@ -798,7 +1069,6 @@
           }
         }
 
-        // 將函數綁定到 window，讓 HTML 的 onclick 可以順利呼叫
         window.nextSlide = function () {
           if (totalSlides > 0) {
             currentSlide = (currentSlide + 1) % totalSlides;
@@ -812,15 +1082,18 @@
             updateSlidePosition();
           }
         };
+
         // 手機版漢堡選單邏輯
         const mobileMenuBtn = document.getElementById("mobileMenuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
         const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        mobileMenuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-          document.body.classList.toggle("overflow-hidden"); // 防止背景滾動
-        });
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            document.body.classList.toggle("overflow-hidden");
+          });
+        }
 
         mobileLinks.forEach((link) => {
           link.addEventListener("click", () => {
@@ -829,12 +1102,11 @@
           });
         });
       });
+
       // Booking Form Logic
       const bookingForm = document.getElementById("bookingForm");
       const submitBtn = document.getElementById("submitBtn");
       const formMessage = document.getElementById("formMessage");
-
-      // 請務必將下方引號內的網址替換為全新部署的 GAS Web App URL
       const GAS_URL = "https://script.google.com/macros/s/AKfycbxX34dMw9eHCZG30u4YaB2mjbj-ebtwUYQmaquXSdfnq1NE9pgqZSM_bkz4NvKvWhl1/exec";
 
       if (bookingForm) {
@@ -847,7 +1119,7 @@
         bookingForm.addEventListener("submit", function (e) {
           e.preventDefault();
 
-          submitBtn.innerText = "Sending...";
+          submitBtn.innerText = getUiCopy("sending");
           submitBtn.disabled = true;
           submitBtn.classList.add("opacity-70", "cursor-not-allowed");
           formMessage.classList.add("hidden");
@@ -875,23 +1147,23 @@
             })
             .catch((error) => {
               console.error("Error:", error);
-              alert("❌ Submission failed. Please try again or contact us via WhatsApp.");
-              formMessage.innerText = "Something went wrong. Please try WhatsApp directly.";
+              alert("❌ " + getUiCopy("submitFailed"));
+              formMessage.innerText = getUiCopy("formError");
               formMessage.className = "text-red-400 text-center text-sm font-bold mt-2 block";
             })
             .finally(() => {
-              submitBtn.innerText = "Confirm Booking";
+              submitBtn.innerText = getUiCopy("confirmBooking");
               submitBtn.disabled = false;
               submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
             });
         });
       }
-      // 4. JavaScript Update: Insert at the end of the existing <script> tag
+
       const priceMatchCheckbox = document.getElementById("priceMatch");
       const quoteContainer = document.getElementById("quoteDetailsContainer");
       const quoteDetails = document.getElementById("quoteDetails");
 
-      if (priceMatchCheckbox && quoteContainer) {
+      if (priceMatchCheckbox && quoteContainer && quoteDetails) {
         priceMatchCheckbox.addEventListener("change", function () {
           if (this.checked) {
             quoteContainer.classList.remove("max-h-0", "opacity-0");
