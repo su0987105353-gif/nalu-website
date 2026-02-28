@@ -134,32 +134,14 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <div id="langSwitcher" class="flex items-center gap-2">
-          <button
-            type="button"
-            data-lang="en"
-            class="lang-btn px-3 py-2 rounded-full text-[12px] font-bold uppercase tracking-widest border border-white/60 hover:bg-white hover:text-black transition-colors"
-            aria-label="Switch to English"
-          >
-            EN
-          </button>
-          <button
-            type="button"
-            data-lang="zh-CN"
-            class="lang-btn px-3 py-2 rounded-full text-[12px] font-bold uppercase tracking-widest border border-white/60 hover:bg-white hover:text-black transition-colors"
-            aria-label="切换到简体中文"
-          >
-            简体
-          </button>
-          <button
-            type="button"
-            data-lang="zh-TW"
-            class="lang-btn px-3 py-2 rounded-full text-[12px] font-bold uppercase tracking-widest border border-white/60 hover:bg-white hover:text-black transition-colors"
-            aria-label="切換到繁體中文"
-          >
-            繁體
-          </button>
-        </div>
+        <button
+          id="langToggleBtn"
+          type="button"
+          class="px-3 py-2 rounded-full text-[14px] font-bold uppercase tracking-widest border border-white/60 hover:bg-white hover:text-black transition-colors"
+          aria-label="Switch language"
+        >
+          简体中文
+        </button>
         <div class="hidden lg:block">
           <a href="#book" class="bg-white text-black px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">Book Now</a>
         </div>
@@ -786,6 +768,8 @@
 
       const UI_COPY = {
         en: {
+          langToggleLabel: "Switch language",
+          langToggleText: "简体中文",
           sending: "Sending...",
           confirmBooking: "Confirm Booking",
           submitFailed: "Submission failed. Please try again or contact us via WhatsApp.",
@@ -795,6 +779,8 @@
             "WITIN WATERS - Direct local rafting operator in Jinja, Uganda. Experience the White Nile with elite guides, professional safety ratios, and competitive pricing. Half-Day Family Float ($40), Whitewater ($85), Full-Day Extreme ($100).",
         },
         "zh-CN": {
+          langToggleLabel: "切换语言",
+          langToggleText: "EN",
           sending: "发送中...",
           confirmBooking: "确认预订",
           submitFailed: "提交失败，请重试或通过 WhatsApp 联系我们。",
@@ -802,15 +788,6 @@
           documentTitle: "WITIN WATERS 漂流 - 乌干达金贾白水探险",
           metaDescription:
             "WITIN WATERS 是乌干达金贾本地直营漂流团队。与专业向导一起征服白尼罗河，安全保障更高、价格更透明：家庭半日漂流（$40）、白水半日（$85）、全天极限（$100）。",
-        },
-        "zh-TW": {
-          sending: "發送中...",
-          confirmBooking: "確認預訂",
-          submitFailed: "提交失敗，請重試或透過 WhatsApp 聯絡我們。",
-          formError: "發生錯誤，請直接透過 WhatsApp 聯絡我們。",
-          documentTitle: "WITIN WATERS 漂流 - 烏干達金賈白水探險",
-          metaDescription:
-            "WITIN WATERS 是烏干達金賈本地直營漂流團隊。與專業嚮導一起征服白尼羅河，安全保障更高、價格更透明：家庭半日漂流（$40）、白水半日（$85）、全天極限（$100）。",
         },
       };
 
@@ -963,529 +940,13 @@
           "📸 AI AI-Enhanced. Just like your IG filters. Real action by Witin, visual punch by Gemini AI. The skills are real, but the river is even better in person!",
       };
 
-      const S2T_PHRASES = {
-        乌干达: "烏干達",
-        金贾: "金賈",
-        预订: "預訂",
-        联系: "聯絡",
-        团队: "團隊",
-        团体: "團體",
-        专业: "專業",
-        价格: "價格",
-        线路: "線路",
-        视频: "影片",
-        进阶: "進階",
-        课程: "課程",
-        比赛: "比賽",
-        训练: "訓練",
-        适合: "適合",
-        体验: "體驗",
-        向导: "嚮導",
-      };
-
-      const S2T_CHARS = {
-        与: "與",
-        专: "專",
-        东: "東",
-        个: "個",
-        为: "為",
-        丽: "麗",
-        举: "舉",
-        义: "義",
-        乐: "樂",
-        习: "習",
-        乡: "鄉",
-        书: "書",
-        买: "買",
-        争: "爭",
-        产: "產",
-        价: "價",
-        众: "眾",
-        优: "優",
-        会: "會",
-        伞: "傘",
-        体: "體",
-        余: "餘",
-        侧: "側",
-        侣: "侶",
-        侦: "偵",
-        侣: "侶",
-        侦: "偵",
-        兒: "兒",
-        兰: "蘭",
-        兴: "興",
-        写: "寫",
-        军: "軍",
-        农: "農",
-        冲: "衝",
-        决: "決",
-        净: "淨",
-        准: "準",
-        凉: "涼",
-        刘: "劉",
-        创: "創",
-        划: "劃",
-        则: "則",
-        刘: "劉",
-        别: "別",
-        制: "製",
-        剂: "劑",
-        办: "辦",
-        务: "務",
-        动: "動",
-        助: "助",
-        励: "勵",
-        劳: "勞",
-        势: "勢",
-        区: "區",
-        医: "醫",
-        华: "華",
-        单: "單",
-        卖: "賣",
-        卫: "衛",
-        历: "歷",
-        压: "壓",
-        厅: "廳",
-        厉: "厲",
-        县: "縣",
-        参: "參",
-        变: "變",
-        台: "臺",
-        叶: "葉",
-        号: "號",
-        后: "後",
-        吗: "嗎",
-        向: "向",
-        听: "聽",
-        吴: "吳",
-        员: "員",
-        告: "告",
-        命: "命",
-        咨: "諮",
-        响: "響",
-        响: "響",
-        唤: "喚",
-        啦: "啦",
-        喷: "噴",
-        嚮: "嚮",
-        团: "團",
-        图: "圖",
-        国: "國",
-        圣: "聖",
-        场: "場",
-        块: "塊",
-        坚: "堅",
-        坛: "壇",
-        坏: "壞",
-        坐: "坐",
-        壮: "壯",
-        声: "聲",
-        壳: "殼",
-        处: "處",
-        备: "備",
-        复: "復",
-        够: "夠",
-        头: "頭",
-        夹: "夾",
-        奖: "獎",
-        奥: "奧",
-        奋: "奮",
-        学: "學",
-        宁: "寧",
-        实: "實",
-        宠: "寵",
-        审: "審",
-        宪: "憲",
-        宫: "宮",
-        导: "導",
-        寿: "壽",
-        将: "將",
-        尔: "爾",
-        尘: "塵",
-        尝: "嘗",
-        尽: "盡",
-        层: "層",
-        届: "屆",
-        属: "屬",
-        岛: "島",
-        岭: "嶺",
-        岗: "崗",
-        州: "州",
-        币: "幣",
-        帅: "帥",
-        师: "師",
-        带: "帶",
-        帮: "幫",
-        广: "廣",
-        庆: "慶",
-        库: "庫",
-        应: "應",
-        底: "底",
-        庙: "廟",
-        开: "開",
-        异: "異",
-        张: "張",
-        强: "強",
-        归: "歸",
-        当: "當",
-        录: "錄",
-        彻: "徹",
-        征: "徵",
-        径: "徑",
-        德: "德",
-        忆: "憶",
-        怀: "懷",
-        态: "態",
-        总: "總",
-        恋: "戀",
-        恶: "惡",
-        悦: "悅",
-        惊: "驚",
-        惯: "慣",
-        惩: "懲",
-        感: "感",
-        愿: "願",
-        慢: "慢",
-        戏: "戲",
-        战: "戰",
-        户: "戶",
-        扩: "擴",
-        执: "執",
-        扫: "掃",
-        扬: "揚",
-        承: "承",
-        技: "技",
-        护: "護",
-        报: "報",
-        担: "擔",
-        拟: "擬",
-        择: "擇",
-        拨: "撥",
-        拼: "拚",
-        挑: "挑",
-        挠: "撓",
-        挡: "擋",
-        挥: "揮",
-        挣: "掙",
-        挤: "擠",
-        换: "換",
-        据: "據",
-        探: "探",
-        接: "接",
-        提: "提",
-        摆: "擺",
-        摇: "搖",
-        摄: "攝",
-        摆: "擺",
-        撑: "撐",
-        撮: "撮",
-        擊: "擊",
-        改: "改",
-        数: "數",
-        效: "效",
-        断: "斷",
-        无: "無",
-        旧: "舊",
-        时: "時",
-        显: "顯",
-        晋: "晉",
-        晒: "曬",
-        暂: "暫",
-        术: "術",
-        权: "權",
-        杂: "雜",
-        杀: "殺",
-        条: "條",
-        来: "來",
-        杨: "楊",
-        极: "極",
-        构: "構",
-        枪: "槍",
-        标: "標",
-        样: "樣",
-        核: "核",
-        梦: "夢",
-        检: "檢",
-        楼: "樓",
-        横: "橫",
-        欢: "歡",
-        欧: "歐",
-        款: "款",
-        步: "步",
-        欢: "歡",
-        毕: "畢",
-        气: "氣",
-        汇: "匯",
-        汉: "漢",
-        污: "污",
-        汤: "湯",
-        沟: "溝",
-        没: "沒",
-        泄: "洩",
-        泽: "澤",
-        洁: "潔",
-        浅: "淺",
-        测: "測",
-        济: "濟",
-        浏: "瀏",
-        浓: "濃",
-        浪: "浪",
-        浴: "浴",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        涨: "漲",
-        湾: "灣",
-        滚: "滾",
-        满: "滿",
-        漂: "漂",
-        潜: "潛",
-        灯: "燈",
-        灰: "灰",
-        灵: "靈",
-        点: "點",
-        炼: "煉",
-        烧: "燒",
-        热: "熱",
-        爱: "愛",
-        爽: "爽",
-        牵: "牽",
-        状: "狀",
-        独: "獨",
-        猫: "貓",
-        献: "獻",
-        现: "現",
-        理: "理",
-        环: "環",
-        画: "畫",
-        畅: "暢",
-        疗: "療",
-        登: "登",
-        盘: "盤",
-        监: "監",
-        盖: "蓋",
-        盘: "盤",
-        码: "碼",
-        确: "確",
-        硬: "硬",
-        礼: "禮",
-        祷: "禱",
-        祸: "禍",
-        离: "離",
-        种: "種",
-        积: "積",
-        称: "稱",
-        稳: "穩",
-        穿: "穿",
-        突: "突",
-        竞: "競",
-        站: "站",
-        笔: "筆",
-        筑: "築",
-        签: "簽",
-        简: "簡",
-        算: "算",
-        管: "管",
-        箭: "箭",
-        篮: "籃",
-        类: "類",
-        粮: "糧",
-        级: "級",
-        纪: "紀",
-        约: "約",
-        线: "線",
-        练: "練",
-        组: "組",
-        细: "細",
-        织: "織",
-        终: "終",
-        经: "經",
-        绑: "綁",
-        结: "結",
-        绕: "繞",
-        统: "統",
-        绘: "繪",
-        给: "給",
-        络: "絡",
-        绝: "絕",
-        续: "續",
-        绳: "繩",
-        维: "維",
-        综: "綜",
-        绿: "綠",
-        缆: "纜",
-        缩: "縮",
-        网: "網",
-        罗: "羅",
-        罚: "罰",
-        罩: "罩",
-        置: "置",
-        习: "習",
-        翻: "翻",
-        联: "聯",
-        职: "職",
-        肤: "膚",
-        肠: "腸",
-        胜: "勝",
-        脑: "腦",
-        腾: "騰",
-        舆: "輿",
-        艺: "藝",
-        节: "節",
-        苏: "蘇",
-        范: "範",
-        荐: "薦",
-        药: "藥",
-        蓝: "藍",
-        虚: "虛",
-        虽: "雖",
-        虫: "蟲",
-        蛋: "蛋",
-        补: "補",
-        表: "表",
-        袭: "襲",
-        装: "裝",
-        裤: "褲",
-        见: "見",
-        规: "規",
-        觉: "覺",
-        观: "觀",
-        触: "觸",
-        订: "訂",
-        计: "計",
-        认: "認",
-        讨: "討",
-        让: "讓",
-        训: "訓",
-        议: "議",
-        讯: "訊",
-        记: "記",
-        讲: "講",
-        设: "設",
-        许: "許",
-        译: "譯",
-        诉: "訴",
-        词: "詞",
-        该: "該",
-        详: "詳",
-        语: "語",
-        误: "誤",
-        说: "說",
-        请: "請",
-        诸: "諸",
-        诺: "諾",
-        谈: "談",
-        谷: "谷",
-        豪: "豪",
-        贝: "貝",
-        负: "負",
-        财: "財",
-        贡: "貢",
-        责: "責",
-        费: "費",
-        资: "資",
-        赛: "賽",
-        赞: "讚",
-        赶: "趕",
-        车: "車",
-        轨: "軌",
-        转: "轉",
-        轮: "輪",
-        软: "軟",
-        轻: "輕",
-        载: "載",
-        较: "較",
-        辅: "輔",
-        边: "邊",
-        达: "達",
-        迁: "遷",
-        过: "過",
-        还: "還",
-        这: "這",
-        进: "進",
-        远: "遠",
-        违: "違",
-        连: "連",
-        迟: "遲",
-        选: "選",
-        递: "遞",
-        逻: "邏",
-        释: "釋",
-        里: "裡",
-        针: "針",
-        钟: "鐘",
-        铁: "鐵",
-        铃: "鈴",
-        链: "鏈",
-        销: "銷",
-        锁: "鎖",
-        长: "長",
-        门: "門",
-        问: "問",
-        间: "間",
-        队: "隊",
-        阳: "陽",
-        阴: "陰",
-        陈: "陳",
-        隐: "隱",
-        难: "難",
-        雇: "僱",
-        雾: "霧",
-        霜: "霜",
-        静: "靜",
-        面: "面",
-        韩: "韓",
-        页: "頁",
-        频: "頻",
-        颗: "顆",
-        题: "題",
-        颜: "顏",
-        风: "風",
-        飞: "飛",
-        饮: "飲",
-        饼: "餅",
-        驱: "驅",
-        验: "驗",
-        骗: "騙",
-        高: "高",
-      };
-
-      function toTraditional(input) {
-        let output = input;
-        Object.entries(S2T_PHRASES).forEach(([simplified, traditional]) => {
-          output = output.replaceAll(simplified, traditional);
-        });
-        return output
-          .split("")
-          .map((char) => S2T_CHARS[char] || char)
-          .join("");
-      }
-
-      const ZH_TW_TEXT_MAP = Object.fromEntries(Object.entries(ZH_TEXT_MAP).map(([key, value]) => [key, toTraditional(value)]));
-      const ZH_TW_RICH_TEXT = Object.fromEntries(Object.entries(ZH_RICH_TEXT).map(([key, value]) => [key, toTraditional(value)]));
-
       function applyTextTranslation(lang) {
-        const textMap = lang === "zh-CN" ? ZH_TEXT_MAP : lang === "zh-TW" ? ZH_TW_TEXT_MAP : null;
-        const richTextMap = lang === "zh-CN" ? ZH_RICH_TEXT : lang === "zh-TW" ? ZH_TW_RICH_TEXT : null;
-
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
           acceptNode(node) {
             if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
             const parent = node.parentElement;
             if (!parent) return NodeFilter.FILTER_REJECT;
             if (["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
-            if (parent.closest("#langSwitcher")) return NodeFilter.FILTER_REJECT;
             return NodeFilter.FILTER_ACCEPT;
           },
         });
@@ -1497,8 +958,8 @@
           }
           const original = ORIGINAL_TEXT.get(node);
           const trimmed = original.trim();
-          if (textMap && richTextMap && (richTextMap[trimmed] || textMap[trimmed])) {
-            const translated = richTextMap[trimmed] || textMap[trimmed];
+          if (lang === "zh-CN" && (ZH_RICH_TEXT[trimmed] || ZH_TEXT_MAP[trimmed])) {
+            const translated = ZH_RICH_TEXT[trimmed] || ZH_TEXT_MAP[trimmed];
             node.nodeValue = original.replace(trimmed, translated);
           } else {
             node.nodeValue = original;
@@ -1509,51 +970,39 @@
 
       function applyAttrTranslation(lang) {
         const quoteDetails = document.getElementById("quoteDetails");
-        const langButtons = document.querySelectorAll(".lang-btn");
+        const langToggleBtn = document.getElementById("langToggleBtn");
         const whatsappBtn = document.querySelector('a[href="https://wa.me/256759476443"]');
         const facebookLink = document.querySelector('a[aria-label="Follow us on Facebook"], a[href*="facebook.com"]');
         const instagramLink = document.querySelector('a[aria-label="Follow us on Instagram"], a[href*="instagram.com"]');
 
-        langButtons.forEach((btn) => {
-          const btnLang = btn.getAttribute("data-lang");
-          const isActive = btnLang === lang;
-          btn.classList.toggle("bg-white", isActive);
-          btn.classList.toggle("text-black", isActive);
-          btn.classList.toggle("border-white", isActive);
-          btn.classList.toggle("border-white/60", !isActive);
-        });
+        if (langToggleBtn) {
+          langToggleBtn.setAttribute("aria-label", UI_COPY[lang].langToggleLabel);
+          langToggleBtn.textContent = UI_COPY[lang].langToggleText;
+        }
         if (quoteDetails) {
           quoteDetails.placeholder =
-            lang === "zh-CN"
-              ? "在此粘贴你现有的报价或机构名称，我们会给你更优价格。"
-              : lang === "zh-TW"
-                ? "在此貼上你現有的報價或機構名稱，我們會提供更優惠價格。"
-                : "Paste your current quote or agency name here. We'll beat it.";
+            lang === "zh-CN" ? "在此粘贴你现有的报价或机构名称，我们会给你更优价格。" : "Paste your current quote or agency name here. We'll beat it.";
         }
         if (whatsappBtn) {
-          whatsappBtn.setAttribute("aria-label", lang === "zh-CN" ? "通过 WhatsApp 联系我们" : lang === "zh-TW" ? "透過 WhatsApp 聯絡我們" : "Contact us on WhatsApp");
+          whatsappBtn.setAttribute("aria-label", lang === "zh-CN" ? "通过 WhatsApp 联系我们" : "Contact us on WhatsApp");
         }
         if (facebookLink) {
-          facebookLink.setAttribute("aria-label", lang === "zh-CN" ? "关注我们的 Facebook" : lang === "zh-TW" ? "追蹤我們的 Facebook" : "Follow us on Facebook");
+          facebookLink.setAttribute("aria-label", lang === "zh-CN" ? "关注我们的 Facebook" : "Follow us on Facebook");
         }
         if (instagramLink) {
-          instagramLink.setAttribute("aria-label", lang === "zh-CN" ? "关注我们的 Instagram" : lang === "zh-TW" ? "追蹤我們的 Instagram" : "Follow us on Instagram");
+          instagramLink.setAttribute("aria-label", lang === "zh-CN" ? "关注我们的 Instagram" : "Follow us on Instagram");
         }
       }
 
       function applySeoTranslation(lang) {
-        document.documentElement.lang = lang;
+        document.documentElement.lang = lang === "zh-CN" ? "zh-CN" : "en";
         document.title = UI_COPY[lang].documentTitle;
         const descriptionMeta = document.querySelector('meta[name="description"]');
         if (descriptionMeta) descriptionMeta.setAttribute("content", UI_COPY[lang].metaDescription);
       }
 
       function applyLanguage(lang) {
-        if (["en", "zh-CN", "zh-TW"].includes(lang)) {
-          currentLang = lang;
-        } else {
-          currentLang = "en";
-        }
+        currentLang = lang === "zh-CN" ? "zh-CN" : "en";
         localStorage.setItem(LANG_STORAGE_KEY, currentLang);
         applyTextTranslation(currentLang);
         applyAttrTranslation(currentLang);
@@ -1565,16 +1014,15 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        const langButtons = document.querySelectorAll(".lang-btn");
+        const langToggleBtn = document.getElementById("langToggleBtn");
         const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
-        applyLanguage(["en", "zh-CN", "zh-TW"].includes(savedLang) ? savedLang : "en");
+        applyLanguage(savedLang === "zh-CN" ? "zh-CN" : "en");
 
-        langButtons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const targetLang = btn.getAttribute("data-lang");
-            applyLanguage(targetLang);
+        if (langToggleBtn) {
+          langToggleBtn.addEventListener("click", () => {
+            applyLanguage(currentLang === "en" ? "zh-CN" : "en");
           });
-        });
+        }
 
         // 視差滾動腳本
         const parallaxContainers = document.querySelectorAll(".parallax-container");
