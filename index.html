@@ -95,28 +95,10 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles/tailwind.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
     rel="stylesheet">
-  <style>
-    /* 啟用平滑捲動 (Smooth Scroll) */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
 
   <!-- Vercel Analytics -->
   <script>
@@ -204,7 +186,7 @@
           <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour1.webp"
             alt="Half-Day Family Float rafting tour on White Nile"
             class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-            loading="lazy">
+            loading="lazy" width="1200" height="800" decoding="async">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Half-Day Family Float</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Perfect for families (ages 3+) and beginners. Experience
@@ -266,7 +248,7 @@
           <img src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/tour2.webp"
             alt="Half-Day Whitewater rafting adventure with Grade 3-4 rapids"
             class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-            loading="lazy">
+            loading="lazy" width="1200" height="800" decoding="async">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Half-Day Whitewater</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Experience the ultimate White Nile adrenaline rush.
@@ -324,7 +306,7 @@
             src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main//gt-nalu-image/witin-raft-vertical-splash-hero.webp"
             alt="Full-Day Extreme rafting experience with Class V rapids"
             class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-            loading="lazy">
+            loading="lazy" width="1200" height="800" decoding="async">
         </div>
         <h3 class="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-900 mb-4">Full-Day Extreme</h3>
         <p class="text-[15px] text-gray-600 leading-[1.8] mb-6">Conquer every Class V rapid on the mighty White Nile.
@@ -378,9 +360,10 @@
 
     <div class="relative w-full aspect-video overflow-hidden bg-black rounded-xl shadow-2xl mb-20 z-10">
       <iframe class="absolute top-0 left-0 w-full h-full"
-        src="https://www.youtube.com/embed/I6vYXLSP0W0?autoplay=1&mute=1&loop=1&playlist=I6vYXLSP0W0&controls=1&rel=0&playsinline=1"
+        src="https://www.youtube.com/embed/I6vYXLSP0W0?controls=1&rel=0&playsinline=1"
         title="Witin Waters Adventure" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        loading="lazy"
         allowfullscreen>
       </iframe>
     </div>
@@ -558,7 +541,8 @@
             <iframe
               class="absolute top-1/2 left-1/2 w-[170%] h-[170%] -translate-x-1/2 -translate-y-1/2 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
               src="https://www.youtube.com/embed/ez6_Ftd3fps?autoplay=1&mute=1&loop=1&playlist=ez6_Ftd3fps&controls=0&showinfo=0&rel=0&playsinline=1"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              title="Elite Safety Ratios Video" frameborder="0" allow="autoplay; encrypted-media" loading="lazy"
+              allowfullscreen></iframe>
           </div>
           <div class="p-8 mt-auto z-10 bg-black">
             <h3 class="text-xl font-serif font-bold text-[#f3ff00] mb-2">Elite Safety Ratios</h3>
@@ -573,7 +557,8 @@
             <iframe
               class="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
               src="https://www.youtube.com/embed/1hDilkr6K2A?autoplay=1&mute=1&loop=1&playlist=1hDilkr6K2A&controls=0&showinfo=0&rel=0&playsinline=1"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              title="Push the Limits Video" frameborder="0" allow="autoplay; encrypted-media" loading="lazy"
+              allowfullscreen></iframe>
           </div>
           <div class="p-8 mt-auto z-10 bg-black">
             <h3 class="text-xl font-serif font-bold text-white mb-2">Push the Limits</h3>
@@ -686,9 +671,10 @@
 
           <div class="w-full h-full flex-shrink-0 relative bg-black">
             <iframe
-              src="https://www.youtube.com/embed/R88Y6V9bsw4?rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=R88Y6V9bsw4"
+              src="https://www.youtube.com/embed/R88Y6V9bsw4?rel=0&playsinline=1"
               title="Witin Waters Community Video" class="w-full h-full pointer-events-auto" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
               allowfullscreen>
             </iframe>
           </div>
@@ -696,19 +682,22 @@
           <div class="w-full h-full flex-shrink-0 relative">
             <img
               src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/community-lesson.webp"
-              alt="Free Community Kayaking Lesson" class="w-full h-full object-cover">
+              alt="Free Community Kayaking Lesson" class="w-full h-full object-cover" loading="lazy" width="1600"
+              height="1000" decoding="async">
           </div>
 
           <div class="w-full h-full flex-shrink-0 relative">
             <img
               src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/community-comp.webp"
-              alt="Local Community Competition" class="w-full h-full object-cover">
+              alt="Local Community Competition" class="w-full h-full object-cover" loading="lazy" width="1600"
+              height="1000" decoding="async">
           </div>
 
           <div class="w-full h-full flex-shrink-0 relative">
             <img
               src="https://cdn.jsdelivr.net/gh/su0987105353-gif/images@main/gt-witin-waters-image/community-smile.webp"
-              alt="Future Stars of the White Nile" class="w-full h-full object-cover">
+              alt="Future Stars of the White Nile" class="w-full h-full object-cover" loading="lazy" width="1600"
+              height="1000" decoding="async">
           </div>
 
         </div>
@@ -727,7 +716,7 @@
           </svg>
         </button>
 
-      </>
+      </div>
 
     </div>
   </section>
@@ -1052,9 +1041,10 @@
     document.addEventListener('DOMContentLoaded', () => {
       // 視差滾動腳本
       const parallaxContainers = document.querySelectorAll('.parallax-container');
+      const backToTopBtn = document.getElementById('backToTop');
       let ticking = false;
 
-      function updateParallax() {
+      function updateOnScroll() {
         const scrolled = window.scrollY;
         const windowHeight = window.innerHeight;
 
@@ -1069,16 +1059,27 @@
             bg.style.transform = `translate3d(0, ${yPos}px, 0)`;
           }
         });
+
+        if (backToTopBtn) {
+          if (scrolled > 500) {
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+          } else {
+            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }
+
         ticking = false;
       }
 
       window.addEventListener('scroll', () => {
         if (!ticking) {
-          window.requestAnimationFrame(updateParallax);
+          window.requestAnimationFrame(updateOnScroll);
           ticking = true;
         }
       }, { passive: true });
-      updateParallax();
+      updateOnScroll();
       // Community Slider Logic
       let currentSlide = 0;
       const sliderContainer = document.getElementById('community-slider');
@@ -1122,19 +1123,6 @@
         });
       });
 
-      // ✅ 修復的 Back to Top 按鈕邏輯
-      const backToTopBtn = document.getElementById('backToTop');
-      if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 500) {
-            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
-          } else {
-            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
-            backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-          }
-        }, { passive: true });
-      }
     });
     // Booking Form Logic
     const bookingForm = document.getElementById('bookingForm');
