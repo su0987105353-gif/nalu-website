@@ -53,6 +53,17 @@ body {
 /* Desktop: fixed background parallax */
 .bg-fixed {
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Prevent horizontal jitter in Safari */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Mobile devices: disable fixed backgrounds, use scroll instead */
