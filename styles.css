@@ -50,31 +50,12 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* Desktop: fixed background parallax */
-.bg-fixed {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Prevent horizontal jitter in Safari */
-html {
-  overflow-x: hidden;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-/* Mobile devices: disable fixed backgrounds, use scroll instead */
-@media (max-width: 768px) {
-  .bg-fixed {
-    background-attachment: scroll !important;
-  }
-}
-
 /* Utility for fixed background images */
 @layer utilities {
+  .bg-fixed {
+    background-attachment: fixed;
+  }
+
   .text-ultra-dark {
     color: var(--color-ultra-dark);
   }
